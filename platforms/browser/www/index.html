@@ -1,0 +1,255 @@
+<!DOCTYPE html> 
+<html>
+<head>
+	<title>Servicios p&uacute;blicos</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css" />
+	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
+</head>
+
+<body>
+    <!-- Registro -->
+    <div data-role="page" id="registro" data-theme="a">
+        <div data-role="header" data-theme="b">
+            <h2>Aplicaci&oacute;n m&oacute;vil</h2>
+        </div>
+	
+        <div data-role="content">
+            <form action="" method="get">
+                <label for="text-basic">*Nombre(s):</label>
+                <input name="text-basic" id="text-basic" value="" type="text">
+                <label for="text-basic">*Apellido paterno:</label>
+                <input name="text-basic" id="text-basic" value="" type="text">
+                <label for="text-basic">*Apellido materno:</label>
+                <input name="text-basic" id="text-basic" value="" type="text">
+                <label for="text-basic">*Correo electr&oacute;nico:</label>
+                <input name="text-basic" id="text-basic" value="" type="text">
+                <label for="text-basic">*Contrase&ntilde;a:</label>
+                <input name="text-basic" id="text-basic" value="" type="text">
+                <label for="text-basic">*Confirma contrase&ntilde;a:</label>
+                <input name="text-basic" id="text-basic" value="" type="text">
+                <label for="text-basic">*Celular (10 digitos):</label>
+                <input name="text-basic" id="text-basic" value="" type="text">
+                
+                <a href="#terminos"  data-role="button" data-theme="b" style="align-content:center">Registrar</a>
+            </form>
+        </div>
+        
+    
+    
+    </div>
+    
+<!-- Terminos y condiciones -->    
+<div data-role="page" id="terminos" data-theme="c">
+	<div data-role="header" data-theme="b">
+		<h2>Aplicaci&oacute;n m&oacute;vil</h2>
+	</div>
+	<div data-role="content">	
+		<p>Términos y condiciones
+        Términos y condiciones
+        Términos y condiciones
+        Términos y condiciones
+        Términos y condiciones
+        Términos y condiciones		
+        Términos y condiciones
+        Términos y condiciones
+        Términos y condiciones
+        Términos y condiciones</p>
+       
+       <div data-inline="true" align="center">
+       	<a href="#registro" data-role="button" data-theme="b" data-inline="true">Salir</a>
+        <a href="#activar" data-role="button" data-theme="b" data-inline="true">Aceptar</a>
+       </div>
+	</div>
+</div>
+
+
+
+
+    <!-- Activar usuario -->
+<div data-role="page" id="activar">
+	<div data-role="header" data-theme="b">
+		<h2>Aplicaci&oacute;n m&oacute;vil</h2>
+	</div>
+	<div data-role="content">	
+		<p>Favor de introducir el c&oacute;digo de activaci&oacute;n</p>	
+        <label for="text-basic">Correo electr&oacute;nico:</label>
+        <input name="text-basic" id="text-basic" value="" type="text">
+        <label for="text-basic">*C&oacute;digo (6 digitos):</label>
+        <input name="text-basic" id="text-basic" value="" type="text">
+        
+        <a href="#principal" data-role="button" data-inline="true" >Ingresar</a>
+	</div>
+	
+</div>
+
+
+
+
+    <!-- Página principal -->
+<div data-role="page" id="principal">
+	<div data-role="header" data-theme="b">
+		<h1>Aplicaci&oacute;n m&oacute;vil</h1>  
+    	<ul data-role="listview">
+			<li><a href="#servicios" data>Servicios</a></li>
+            <li><a href="#page3">Mis reportes</a></li>
+		</ul>
+	</div>
+	<div data-role="content">	
+		<h1 data-theme="a">Bot&oacute;n de emergencia</h1>	
+        
+        <h1>T&eacute;rminar emergencia</h1>
+        
+	</div>
+</div>
+    
+    <!-- Selector de servicios -->
+<div data-role="page" id="servicios">
+	<div data-role="header" data-theme="b">
+    	<h1>Aplicaci&oacute;n m&oacute;vil</h1>  
+    </div>
+        <h2>Servicios</h2>
+        <form>
+            <div class="ui-field-contain">
+                <select name="select-servicios" id="select-native-1">
+                    <option value="1">Alumbrado</option>
+                    <option value="2">Aguas y alcantarillas</option>
+                    <option value="3">Obras p&uacute;blicas</option>
+                    <option value="4">Servicios p&uacute;blicos</option>
+                </select>
+            </div>
+
+
+            <!-- este selector debe ser llenado según el servicio que se selecciono -->
+            <div class="ui-field-contain">
+                <select name="select-subservicios" id="select-native-2">
+                    <option value="1">Fuga de agua</option>
+                    <option value="2">Falta de agua</option>
+                    <option value="3">Robo coladera o mantenimiento</option>
+                    <option value="4">Desasolve</option>
+                    <option value="4">Pipa de agua</option>
+                </select>
+            </div>
+        </form>	
+    
+    <a href="#alumbrado" data-role="button">Alumbrado</a>
+    <a href="#aguas" data-role="button">Aguas y alcantarillados</a>
+    <a href="#obras" data-role="button">Obras p&uacute;blicas</a>
+    <a href="#publicos" data-role="button">Servicios p&uacute;blicos</a>
+</div>
+
+
+    
+    <!-- Página de alumbrado -->
+<div data-role="page" id="alumbrado">
+	<div data-role="header" data-theme="b">
+    	<h1>Aplicaci&oacute;n m&oacute;vil</h1>
+    </div>
+    <div data-role="content">
+    	<h2 align="center" style="color:#E9070B">Alumbrado</h2>
+        <label for="text-textArea">Describe el problema (opcional):</label>
+        <textarea id="textArea" name="textArea"></textarea>
+            
+        <p>Tomar foto:</p>
+        <div data-inline="true" align="center">
+              <button data-inline="true" src="img/camera.png"></button>
+              <button data-inline="true" data-icon="custom"></button>
+              <button data-inline="true" data-icon="custom"></button>
+              <button data-inline="true" data-icon="custom"></button>
+        </div>
+        <div data-inline="true" align="center">
+        	<a href="#servicios" data-role="button" data-inline="true">Cancelar</a>
+            <a href="#" data-role="button" data-inline="true">Enviar reporte</a>
+        </div>
+       	</div>
+</div>
+    
+    
+    <!-- Página de Aguas y alcantarillados -->
+    <div data-role="page" id="obras">
+        <div data-role="header" data-theme="b">
+            <h1>Aplicaci&oacute;n m&oacute;vil</h1>
+        </div>
+        <div data-role="content">
+            <h2 align="center" style="color:#E9070B">Obras p&uacute;blicas</h2>
+            <label for="text-textArea">Describe el problema (opcional):</label>
+            <textarea id="textArea" name="textArea"></textarea>
+            
+            <p>Tomar foto:</p>
+            <div data-inline="true" align="center">
+              <button data-inline="true" src="img/camera.png"></button>
+              <button data-inline="true" data-icon="custom"></button>
+              <button data-inline="true" data-icon="custom"></button>
+              <button data-inline="true" data-icon="custom"></button>
+            </div>
+            <div data-inline="true" align="center">
+            	<a href="#servicios" data-role="button" data-inline="true">Cancelar</a>
+            	<a href="#" data-role="button" data-inline="true">Enviar reporte</a>
+            </div>
+        </div>
+    </div>
+    
+    
+    <!-- Página obras públicas -->
+    <div data-role="page" id="aguas">
+        <div data-role="header" data-theme="b">
+            <h1>Aplicaci&oacute;n m&oacute;vil</h1>
+        </div>
+        <div data-role="content">
+            <h2 align="center" style="color:#E9070B">Aguas y alcantarillados</h2>
+            <label for="text-textArea">Describe el problema (opcional):</label>
+            <textarea id="textArea" name="textArea"></textarea>
+            
+            <p>Tomar foto:</p>
+            <div data-inline="true" align="center">
+              <button data-inline="true" src="img/camera.png"></button>
+              <button data-inline="true" data-icon="custom"></button>
+              <button data-inline="true" data-icon="custom"></button>
+              <button data-inline="true" data-icon="custom"></button>
+            </div>
+            <div data-inline="true" align="center">
+            	<a href="#servicios" data-role="button" data-inline="true">Cancelar</a>
+            	<a href="#" data-role="button" data-inline="true">Enviar reporte</a>
+            </div>
+        </div>
+    </div>
+    
+    
+    <!-- Página de servicios públicos -->
+    <div data-role="page" id="publicos">
+        <div data-role="header" data-theme="b">
+            <h1>Aplicaci&oacute;n m&oacute;vil</h1>
+        </div>
+        <div data-role="content">
+            <h2 align="center" style="color:#E9070B">Servicios p&uacute;blicos</h2>
+            <label for="text-textArea">Describe el problema (opcional):</label>
+            <textarea id="textArea" name="textArea"></textarea>
+            
+            <p>Tomar foto:</p>
+            <div data-inline="true" align="center">
+              <button data-inline="true" src="img/camera.png"></button>
+              <button data-inline="true" data-icon="custom"></button>
+              <button data-inline="true" data-icon="custom"></button>
+              <button data-inline="true" data-icon="custom"></button>
+            </div>
+            <div data-inline="true" align="center">
+            	<a href="#servicios" data-role="button" data-inline="true">Cancelar</a>
+            	<a href="#popupBasic" data-role="button" data-inline="true" data-rel="dialog">Enviar reporte</a>
+            </div>
+        </div>
+    </div>
+
+<!-- Popup mensaje de Reporte enviado con exito
+    <div data-role="popup" id="popupBasic">
+    	<div data-role="content">
+        
+		<h2 align="center" style="color:#E9070B">!Reporte enviado con &eacute;xito¡</h2>
+        
+        <button id="btn_aceptar">Aceptar</button>
+        </div>
+	</div>
+-->    
+    
+</body>
+</html>

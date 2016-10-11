@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Servicios p&uacute;blicos</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css"/>
+    <!--<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="./js/main.js"></script>
+    <link href="css/animation.css" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src="js/functionsAnimation.js"></script>
+</head>
+<body>
+<!--Acceso-->
+<div data-role="page" id="acceso" data-theme="c">
+    <div data-role="header" data-theme="d">
+        <table>
+            <tr>
+                <td><img src="img/logo_bco.png" width="55"
+                         style="margin-left: 15px; margin-top: 5px"/></td>
+                <td><p style="margin-left: 10px;">Servicios p&uacute;blicos</p></td>
+            </tr>
+        </table>
+    </div>
+    <div data-role="content">
+        <div align="Center">
+            <h2 align="center" style="color:#E9070B">Iniciar Sesi&oacute;n</h2>
+            <br/>
+        </div>
+        <div align="justify">
+            <h5>&iquest;Ya estas registrado?</h5>
+            <a href="#login" data-role="link" data-theme="c" data-inline="true">Iniciar Sesi&oacute;n</a>
+            <br/>
+            <h5>&iquest;A&uacute;n no est&aacute; registrado?</h5>
+            <a href="#registro" data-role="link" data-theme="c" data-inline="true">Registrar</a>
+            <br/>
+            <h5>&iquest;No puedes iniciar sesi&oacute;n?</h5>
+            <a href="#contacto" data-role="link" data-theme="c" data-inline="true">Cont&aacute;ctanos</a>
+        </div>
+    </div>
+</div>
+<!--Contacto-->
+<div data-role="page" id="contacto" data-theme="c">
+    <div data-role="header" data-theme="d">
+        <table>
+            <tr>
+                <td><img src="img/logo_bco.png" width="55"
+                         style="margin-left: 15px; margin-top: 5px"/></td>
+                <td><p style="margin-left: 10px;">Servicios p&uacute;blicos</p></td>
+            </tr>
+        </table>
+    </div>
+    <div data-role="content">
+        <div align="Center">
+            <h2 align="center" style="color:#E9070B">Cont&aacute;ctanos</h2>
+            <br/>
+        </div>
+        <div align="center">
+            <h5>Comun&iacute;cate a los tel&eacute;fonos</h5>
+            <br/>
+            <p>018002345890234</p>
+            <p>018003382763478</p>
+            <br/>
+            <a href="#acceso" data-role="button" data-theme="c"
+               style="align-content:center; width: 160px;">Salir</a>
+        </div>
+    </div>
+</div>
+<!--Logeo de usuario-->
+<div data-role="page" id="login" data-theme="c">
+    <div data-role="header" data-theme="d">
+        <table>
+            <tr>
+                <td><img src="img/logo_bco.png" width="55"
+                         style="margin-left: 15px; margin-top: 5px"/></td>
+                <td><p style="margin-left: 10px;">Servicios p&uacute;blicos</p></td>
+            </tr>
+        </table>
+    </div>
+    <div data-role="content">
+        <div align="Center">
+            <h2 align="center" style="color:#E9070B">Validar cuenta para iniciar sesi&oacute;n</h2>
+            <br/>
+        </div>
+        <div align="justify">
+            <form action="" method="get">
+                <label for="text-CorreoLogin">* Correo electr&oacute;nico:</label>
+                <input name="text-basic" id="text-CorreoLogin" value="" type="text">
+                <label for="text-PassLogin">* Contrase&ntilde;a:</label>
+                <input name="text-basic" id="text-PassLogin" value="" type="password">
+            </form>
+        </div>
+        <div align="center">
+            <a href="#recupera" data-role="link" data-theme="c" data-inline="true">&iquest;Olvidaste
+                tu contrase&ntilde;a?</a>
+            <br>
+            <!--button id="button_login" data-theme="c"  style="width: 160px;">
+            Entrar</button-->
+            <a href="#home" data-role="button" data-theme="c"
+               style="align-content:center; width: 100%;">Entrar</a>
+        </div>
+    </div>
+</div>
+<!--Recupera Contrase&ntilde;a-->
+<div data-role="page" id="recupera" data-theme="c">
+    <div data-role="header" data-theme="d">
+        <table>
+            <tr>
+                <td><img src="img/logo_bco.png" width="55"
+                         style="margin-left: 15px; margin-top: 5px"/></td>
+                <td><p style="margin-left: 10px;">Servicios p&uacute;blicos</p></td>
+            </tr>
+        </table>
+    </div>
+    <div data-role="content">
+        <div align="Center">
+            <h2 align="center" style="color:#E9070B">Recuperar Contrase&ntilde;a</h2>
+            <br/>
+        </div>
+        <div align="justify">
+            <p>Favor de ingresar su correo electr&oacute;nico</p>
+            <form action="" method="get">
+                <label for="text-CorreoReg">* Correo electr&oacute;nico:</label>
+                <input name="text-CorreoRecuperaC" id="text-CorreoRecuperaC" value="" type="text">
+                <div align="center">
+                    <a href="#terminos" data-role="button" data-theme="c"
+                       style="align-content:center; width: 160px;">Enviar</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- Registro -->
+<div data-role="page" id="registro" data-theme="c">
+    <div data-role="header" data-theme="d">
+        <table>
+            <tr>
+                <td><img src="img/logo_bco.png" width="55"
+                         style="margin-left: 15px; margin-top: 5px"/></td>
+                <td><p style="margin-left: 10px;">Servicios p&uacute;blicos</p></td>
+            </tr>
+        </table>
+    </div>
+
+    <div data-role="content" style="background-color: #ffffff;">
+        <form action="" method="get">
+            <label for="text-Nombre">* Nombre(s):</label>
+            <input name="text-basic" id="text-Nombre" value="" type="text" required>
+            <label for="text-APaterno">* Apellido paterno:</label>
+            <input name="text-basic" id="text-APaterno" value="" type="text" required>
+            <label for="text-AMaterno">* Apellido materno:</label>
+            <input name="text-basic" id="text-AMaterno" value="" type="text" required>
+            <label for="text-CorreoReg">* Correo electr&oacute;nico:</label>
+            <input name="text-basic" id="text-CorreoReg" value="" type="email" required>
+            <label for="text-PassReg">* Contrase&ntilde;a:</label>
+            <input name="text-basic" id="text-PassReg" value="" type="password" required>
+            <label for="text-CPassReg">* Confirma contrase&ntilde;a:</label>
+            <input name="text-basic" id="text-CPassReg" value="" type="password" required>
+            <label for="text-Cel">* Celular (10 digitos):</label>
+            <input name="text-basic" id="text-Cel" value="" type="text" size="10" maxlength="10" required>
+            <div align="center">
+                <button id="button_validaReg" onclick="guardaReg()" data-theme="c" style="width: 160px;">Siguiente</button>
+            </div>
+        </form>
+    </div>
+</div>
+<!-- Terminos y condiciones -->
+<div data-role="page" id="terminos" style="background-color: #ffffff;">
+    <div data-role="header" data-theme="d">
+        <table>
+            <tr>
+                <td><img src="img/logo_bco.png" width="55"
+                         style="margin-left: 15px; margin-top: 5px"/></td>
+                <td><p style="margin-left: 10px;">Servicios p&uacute;blicos</p></td>
+            </tr>
+        </table>
+    </div>
+    <div data-role="content" align="justify" style="background-color: #ffffff;">
+        <h2 align="center" style="color:#E9070B">T&eacute;rminos y condiciones</h2>
+        <p>
+            El uso del servicio de &quot;Atenci&oacute;n ciudadana&quot;, en dispositivos m&oacute;viles
+            como Android e iOS, es parte del proyecto que desarrolla
+            ND Negocios Digitales con el objetivo de poner a la disposici&oacute;n de la ciudadan&iacute;a
+            una herramienta tecnol&oacute;gica para realizar
+            la denuncia de servicios p&uacute;blicos, facilitando de igual manera solicitar auxilio
+            a las autoridades locales, en caso de una emergencia.
+            Aceptar t&eacute;rminos y condiciones:
+            Para comenzar a utilizar la aplicaci&oacute;n es necesario que como ciudadano lea
+            cuidadosamente los t&eacute;rminos y condiciones de uso.
+            La aplicaci&oacute;n &quot;Atenci&oacute;n ciudadana&quot;, puede descargarse desde
+            cualquier equipo Android e iOS.
+            Descargando el aplicativo m&oacute;vil, se deber&aacute; ejecutar la aplicaci&oacute;n,
+            la descarga y registro de la aplicaci&oacute;n implica que el
+            ciudadano confirma que ha le&iacute;do, entendido y aceptado los t&eacute;rminos y
+            condiciones de uso presentes.
+            El uso de la aplicaci&oacute;n solo podr&aacute; realizarse si est&aacute; de acuerdo
+            con los t&eacute;rminos y condiciones de uso que se consigan en este documento.
+            SI EL CIUDADANO NO EST&Aacute; DE ACUERDO EN LOS T&Eacute;RMINOS Y CONDICIONES QUE SE
+            ESTABLECEN EN EST&Eacute; APARTADO, NO PODR&Aacute; HACER USO DE LA APLICACI&Oacute;N.
+            Geolocalizaci&oacute;n
+            Para proporcionar el servicio de &quot;Atenci&oacute;n ciudadana&quot;, a trav&eacute;s
+            de la aplicaci&oacute;n, ND Negocios Digitales, deber&aacute; hacer uso de la informaci&oacute;n
+            basada en la localizaci&oacute;n del dispositivo m&oacute;vil, mediante la tecnolog&iacute;a
+            de GPS (Sistema de posicionamiento global), en los lugares que o ubicaciones que
+            se encuentre disponible dicha tecnolog&iacute;a, por lo que es necesario utilizar,
+            recabar, tratar, almacenar y transmitir los datos geogr&aacute;ficos del dispositivo
+            m&oacute;vil e incluyendo de manera enunciativa m&aacute;s no limitativa, la informaci&oacute;n
+            personal como su nombre, apellido paterno, apellido materno,
+            correo electr&oacute;nico, n&uacute;mero de tel&eacute;fono del dispositivo, por lo que
+            el ciudadano acepta y otorga su consentimiento para que ND Negocios Digitales lleve a
+            cabo dichas
+            actividades para prestar el servicio de la aplicaci&oacute;n.
+            Es necesario que para el uso del servicio de la aplicaci&oacute;n de &quot;Atenci&oacute;n
+            ciudadana&quot;, se permita el compartir la ubicaci&oacute;n con su n&uacute;mero de tel&eacute;fono&eacute;a
+            los servicios p&uacute;blicos, con esto el ciudadano autoriza trasmitir dicha informaci&oacute;n.
+            Uso de la aplicaci&oacute;n
+            El ciudadano no podr&aacute; hacer uso de aplicaci&oacute;n para ning&uacute;n fin que
+            conlleve a inhabilitar, da&ntilde;ar, sobre cargar o afectar la aplicaci&oacute;n.
+            El ciudadano no podr&aacute; acceder o tratar de acceder a las cuentas, sistemas o redes
+            inform&aacute;ticas, conectadas a las mismas, por ning&uacute;n medio, ni extraer
+            contrase&ntilde;as u otros medios inform&aacute;ticos.
+            El ciudadano no podr&aacute; utilizar la aplicaci&oacute;n para fines de difamaci&oacute;n,
+            abuso, acoso, acecho, amenaza o violaci&oacute;n de los derechos de otras personas.
+            Confidencialidad
+            El ciudadano est&aacute; de acuerdo en mantener la informaci&oacute;n derivada de esta
+            aplicaci&oacute;n, como confidencial y a utilizarla &uacute;nicamente para el prop&oacute;sito
+            para la cual fue dise&ntilde;ada y creada.
+
+        </p>
+
+        <div data-inline="true" align="center">
+            <!--<button id="button_ExitTerm" data-theme="c" style="width: 160px;">Salir</button>-->
+            <a href="javascript: exitTermAcces();" data-role="button" data-theme="c" data-inline="true" style="width: 160px;">Salir</a>
+            <!--<a href="#acceso" data-role="button" data-theme="c" data-inline="true">Salir</a>-->
+            <a href="javascript: guardaTerm();" data-role="button" data-theme="c" data-inline="true" style="width: 160px;">Aceptar</a>
+        </div>
+    </div>
+</div>
+<!-- Aviso de privacidad -->
+<div data-role="page" id="privacidad" style="background-color: #ffffff;">
+    <div data-role="header" data-theme="d">
+        <table>
+            <tr>
+                <td><img src="img/logo_bco.png" width="55"
+                         style="margin-left: 15px; margin-top: 5px"/></td>
+                <td><p style="margin-left: 10px;">Servicios p&uacute;blicos</p></td>
+            </tr>
+        </table>
+    </div>
+    <div data-role="content" align="justify" style="background-color: #ffffff;">
+        <h2 align="center" style="color:#E9070B">Aviso de privacidad</h2>
+        <p>
+            ND Negocios digitales con domicilio en Insurgentes Sur 1524, Po-04 Piso 10, Col. Cr&eacute;dito Constructor,
+            Delegaci&oacute;n Benito Ju&aacute;rez, M&eacute;xico D.F., C.P.03901, en cumplimiento por lo dispuesto a la Ley federal de
+            datos personales en posesi&oacute;n de los particulares, hace de su conocimiento el presente aviso de privacidad:
+            Los datos personales proporcionados directa o indirectamente por el ciudadano, no ser&aacute;n trasferibles a terceros.
+            El ciudadano tendr&aacute; derecho de modificar todos y cada uno de sus datos.
+            En caso de modificar el presente aviso de privacidad se dar&aacute; a conocer a los ciudadanos.
+        </p>
+
+        <div data-inline="true" align="center">
+            <a href="javascript: exitTermAcces();" data-role="button" data-theme="c" data-inline="true" style="width: 160px;">Salir</a>
+            <a href="javascript: guardaPriv();" data-role="button" data-theme="c" data-inline="true" style="width: 160px;">Aceptar</a>
+        </div>
+    </div>
+</div>
+<!-- Activar usuario -->
+<div data-role="page" id="activar">
+    <div data-role="header" data-theme="d">
+        <table>
+            <tr>
+                <td><img src="img/logo_bco.png" width="55"
+                         style="margin-left: 15px; margin-top: 5px"/></td>
+                <td><p style="margin-left: 10px;">Servicios p&uacute;blicos</p></td>
+            </tr>
+        </table>
+    </div>
+    <div data-role="content" style="background-color: #ffffff;">
+        <h2 align="center" style="color:#E9070B">Activar cuenta</h2>
+        <p>Favor de introducir el c&oacute;digo de activaci&oacute;n</p>
+        <label for="text-basic">Correo electr&oacute;nico:</label>
+        <input name="text-basic" id="text-corre" value="" type="text">
+        <label for="text-basic">*C&oacute;digo (6 digitos):</label>
+        <input name="text-basic" id="text-basic" value="" type="text">
+        <div align="center">
+            <a href="#sos" data-role="button" data-inline="true">Ingresar</a>
+        </div>
+    </div>
+</div>
+<!-- P&aacute;gina principal -->
+<div data-role="page" id="sos">
+    <div data-role="header" data-theme="d">
+        <table>
+            <tr>
+                <td><img src="img/logo_bco.png" width="55"
+                         style="margin-left: 15px; margin-top: 5px"/></td>
+                <td><p style="margin-left: 10px;">Servicios p&uacute;blicos</p></td>
+            </tr>
+        </table>
+    </div>
+
+    <div data-role="content">
+        <h2 align="center" style="color:#E9070B">Bot&oacute;n de emergencia</h2>
+        <center>
+            <a href="#principal">
+                <input type="image" src="img/btn_ayuda_rojo.png" />
+            </a>
+        </center>
+    </div>
+    <div data-role="footer">
+        <ul data-role="listview">
+            <li><a href="#servicios" data>Servicios</a></li>
+            <li><a href="#page3">Mis reportes</a></li>
+        </ul>
+    </div>
+</div>
+<div data-role="page" id="principal">
+    <div data-role="header" data-theme="d">
+        <table>
+            <tr>
+                <td><img src="img/logo_bco.png" width="55"
+                         style="margin-left: 15px; margin-top: 5px"/></td>
+                <td><p style="margin-left: 10px;">Servicios p&uacute;blicos</p></td>
+            </tr>
+        </table>
+    </div>
+    <div data-role="content">
+
+        <h2 align="center" style="color:#E9070B">Bot&oacute;n de emergencia</h2>
+        <center>
+            <input type="image" src="img/iconoPolicia.png" width="65"/>
+            <input type="image" src="img/iconoAmbulancia.png" width="65"/>
+            <input type="image" src="img/iconoBombero.png" width="65"/>
+
+        </center>
+
+        <center>
+            <img src="img/btn_ayuda_rojo.png"/>
+        </center>
+
+
+    </div>
+    <div data-role="footer">
+        <ul data-role="listview">
+            <li><a href="#servicios" data>Servicios</a></li>
+            <li><a href="#page3">Mis reportes</a></li>
+        </ul>
+    </div>
+</div>
+<!-- Selector de servicios -->
+<div data-role="page" id="servicios">
+    <div data-role="header" data-theme="d">
+        <table>
+            <tr>
+                <td><img src="img/logo_bco.png" width="55"
+                         style="margin-left: 15px; margin-top: 5px"/></td>
+                <td><p style="margin-left: 10px;">Servicios p&uacute;blicos</p></td>
+            </tr>
+        </table>
+    </div>
+    <div data-role="content">
+        <form>
+            <div class="ui-field-contain">
+                <select name="select-servicios" id="select-native-1">
+                    <option value="1">Alumbrado</option>
+                    <option value="2">Aguas y alcantarillas</option>
+                    <option value="3">Obras p&uacute;blicas</option>
+                    <option value="4">Servicios p&uacute;blicos</option>
+                </select>
+            </div>
+
+
+            <!-- este selector debe ser llenado seg&uacute;n el servicio que se selecciono -->
+            <div class="ui-field-contain">
+                <select name="select-subservicios" id="select-native-2">
+                    <option value="1">Fuga de agua</option>
+                    <option value="2">Falta de agua</option>
+                    <option value="3">Robo coladera o mantenimiento</option>
+                    <option value="4">Desasolve</option>
+                    <option value="4">Pipa de agua</option>
+                </select>
+            </div>
+        </form>
+
+        <a href="#alumbrado" data-role="button">Alumbrado</a>
+        <a href="#aguas" data-role="button">Aguas y alcantarillados</a>
+        <a href="#obras" data-role="button">Obras p&uacute;blicas</a>
+        <a href="#publicos" data-role="button">Servicios p&uacute;blicos</a>
+        <a href="#sos" data-role="button" data-inline="true">Cancelar</a>
+    </div>
+
+</div>
+<!-- P&aacute;gina de alumbrado -->
+<div data-role="page" id="alumbrado">
+    <div data-role="header" data-theme="d">
+        <table>
+            <tr>
+                <td><img src="img/logo_bco.png" width="55"
+                         style="margin-left: 15px; margin-top: 5px"/></td>
+                <td><p style="margin-left: 10px;">Servicios p&uacute;blicos</p></td>
+            </tr>
+        </table>
+    </div>
+    <div data-role="content">
+        <h2 align="center" style="color:#E9070B">Alumbrado</h2>
+        <label for="text-textArea">Describe el problema (opcional):</label>
+        <textarea id="textArea" name="textArea"></textarea>
+
+        <p>Tomar foto:</p>
+        <div data-inline="true" align="center">
+            <input type="image" src="img/camera.png" width="35" height="35" onclick="">
+            <input type="image" src="img/camera.png" width="35" height="35" onclick="">
+            <input type="image" src="img/camera.png" width="35" height="35" onclick="">
+            <input type="image" src="img/camera.png" width="35" height="35" onclick="">
+        </div>
+        <div data-inline="true" align="center">
+            <a href="#sos" data-role="button" data-inline="true">Cancelar</a>
+            <a href="#" data-role="button" data-inline="true">Enviar reporte</a>
+        </div>
+    </div>
+</div>
+<!-- P&aacute;gina de Aguas y alcantarillados -->
+<div data-role="page" id="obras">
+    <div data-role="header" data-theme="d">
+        <table>
+            <tr>
+                <td><img src="img/logo_bco.png" width="55"
+                         style="margin-left: 15px; margin-top: 5px"/></td>
+                <td><p style="margin-left: 10px;">Servicios p&uacute;blicos</p></td>
+            </tr>
+        </table>
+    </div>
+    <div data-role="content">
+        <h2 align="center" style="color:#E9070B">Obras p&uacute;blicas</h2>
+        <label for="text-textArea">Describe el problema (opcional):</label>
+        <textarea id="textArea" name="textArea"></textarea>
+
+        <p>Tomar foto:</p>
+        <div data-inline="true" align="center">
+            <button data-inline="true" src="img/camera.png"></button>
+            <button data-inline="true" data-icon="custom"></button>
+            <button data-inline="true" data-icon="custom"></button>
+            <button data-inline="true" data-icon="custom"></button>
+        </div>
+        <div data-inline="true" align="center">
+            <a href="#sos" data-role="button" data-inline="true">Cancelar</a>
+            <a href="#" data-role="button" data-inline="true">Enviar reporte</a>
+        </div>
+    </div>
+</div>
+<!-- P&aacute;gina obras p&uacute;blicas -->
+<div data-role="page" id="aguas">
+    <div data-role="header" data-theme="d">
+        <table>
+            <tr>
+                <td><img src="img/logo_bco.png" width="55"
+                         style="margin-left: 15px; margin-top: 5px"/></td>
+                <td><p style="margin-left: 10px;">Servicios p&uacute;blicos</p></td>
+            </tr>
+        </table>
+    </div>
+    <div data-role="content">
+        <h2 align="center" style="color:#E9070B">Aguas y alcantarillados</h2>
+        <label for="text-textArea">Describe el problema (opcional):</label>
+        <textarea id="textArea" name="textArea"></textarea>
+
+        <p>Tomar foto:</p>
+        <div data-inline="true" align="center">
+            <button data-inline="true" src="img/camera.png"></button>
+            <button data-inline="true" data-icon="custom"></button>
+            <button data-inline="true" data-icon="custom"></button>
+            <button data-inline="true" data-icon="custom"></button>
+        </div>
+        <div data-inline="true" align="center">
+            <a href="#servicios" data-role="button" data-inline="true">Cancelar</a>
+            <a href="#" data-role="button" data-inline="true">Enviar reporte</a>
+        </div>
+    </div>
+</div>
+<!-- P&aacute;gina de servicios p&uacute;blicos -->
+<div data-role="page" id="publicos">
+    <div data-role="header" data-theme="d">
+        <table>
+            <tr>
+                <td><img src="img/logo_bco.png" width="55"
+                         style="margin-left: 15px; margin-top: 5px"/></td>
+                <td><p style="margin-left: 10px;">Servicios p&uacute;blicos</p></td>
+            </tr>
+        </table>
+    </div>
+    <div data-role="content">
+        <h2 align="center" style="color:#E9070B">Servicios p&uacute;blicos</h2>
+        <label for="text-textArea">Describe el problema (opcional):</label>
+        <textarea id="textArea" name="textArea"></textarea>
+
+        <p>Tomar foto:</p>
+        <div data-inline="true" align="center">
+            <button data-inline="true" src="img/camera.png"></button>
+            <button data-inline="true" data-icon="custom"></button>
+            <button data-inline="true" data-icon="custom"></button>
+            <button data-inline="true" data-icon="custom"></button>
+        </div>
+        <div data-inline="true" align="center">
+            <a href="#sos" data-role="button" data-inline="true">Cancelar</a>
+            <a href="#" data-role="button" data-inline="true" data-rel="dialog">Enviar reporte</a>
+        </div>
+    </div>
+</div>
+<!-- P&aacute;gina del Home-->
+<div data-role="page" id="home">
+    <div data-role="header" data-theme="d">
+        <table>
+            <tr>
+                <td><img src="img/logo_bco.png" width="55"
+                         style="margin-left: 15px; margin-top: 5px"/></td>
+                <td><p style="margin-left: 10px;">Servicios p&uacute;blicos</p></td>
+            </tr>
+        </table>
+    </div>
+    <div data-role="content">
+        <div id="policia" onclick="llamar(1)">
+                
+        </div>
+        <div id="bomberos" onclick="llamar(3)">
+                
+        </div>
+        <div id="ambulancia" onclick="llamar(2)">
+                
+        </div>
+        <div id="bAyuda" onclick="mostrar();">
+                
+        </div>
+    </div>
+</div>
+</body>
+</html>

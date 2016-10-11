@@ -1,0 +1,168 @@
+#contenedor
+{
+	position: relative;
+}
+#bAyuda
+{
+	width: 161px;
+	height: 161px;
+	background: url(../img/btn_ayuda_rojo.png) no-repeat;
+	position: absolute;
+	top: 50%;
+	left: 45%;
+	cursor: pointer;
+}
+/*mostrar botones con animacion*/
+.policia{
+	width: 48px;
+	height: 48px;
+	background: url(../img/iconoPolicia.png) no-repeat;
+	position: absolute;
+	top: 43%;
+	left: 43%;
+	display: none;
+	cursor: pointer;
+	animation: animarPolicia 1s;
+	-moz-animation: animarPolicia 1s;
+	-o-animation: animarPolicia 1s;
+	-webkit-animation: animarPolicia 1s;
+}
+.ambulancia{
+	width: 48px;
+	height: 48px;
+	background: url(../img/iconoAmbulancia.png) no-repeat;
+	position: absolute;
+	top: 40%;
+	left: 49%;
+	display: none;
+	cursor: pointer;
+}
+.bomberos{
+	width: 48px;
+	height: 48px;
+	background: url(../img/iconoBombero.png) no-repeat;
+	position: absolute;
+	top: 43%;
+	left: 55%;
+	display: none;
+	cursor: pointer;
+	animation: animarBombero 1s;
+	-moz-animation: animarBombero 1s;
+	-o-animation: animarBombero 1s;
+	-webkit-animation: animarBombero 1s;
+}
+
+/*ocultar botones con animacion*/
+.policiaR{
+	width: 48px;
+	height: 48px;
+	background: url(../img/iconoPolicia.png) no-repeat;
+	position: absolute;
+	top: 40%;
+	left: 49%;
+	display: none;
+	cursor: pointer;
+	animation: animarPoliciaR 1s;
+	-moz-animation: animarPoliciaR 1s;
+	-o-animation: animarPoliciarR 1s;
+	-webkit-animation: animarPoliciaR 1s;
+}
+.bomberosR{
+	width: 48px;
+	height: 48px;
+	background: url(../img/iconoBombero.png) no-repeat;
+	position: absolute;
+	top: 40%;
+	left: 49%;
+	display: none;
+	cursor: pointer;
+	animation: animarBomberoR 1s;
+	-moz-animation: animarBomberoR 1s;
+	-o-animation: animarBomberoR 1s;
+	-webkit-animation: animarBomberoR 1s;
+}
+
+/*---Animaciones---*/
+/*animacion para cuando se muestran los botones*/
+@keyframes animarPolicia
+{
+	from{left: 49%; top: 40%;}
+	to{left: 43%; top: 43%;}
+}
+@-moz-keyframes animarPolicia
+{
+	from{left: 49%; top: 40%;}
+	to{left: 43%; top: 43%;}
+}
+@-o-keyframes animarPolicia
+{
+	from{left: 49%; top: 40%;}
+	to{left: 43%; top: 43%;}
+}
+@-webkit-keyframes animarPolicia
+{
+	from{left: 49%; top: 40%;}
+	to{left: 43%; top: 43%;}
+}
+@keyframes animarBombero
+{
+	from{left: 49%; top: 40%;}
+	to{left: 55%; top: 43%;}
+}
+@-moz-keyframes animarBombero
+{
+	from{left: 49%; top: 40%;}
+	to{left: 55%; top: 43%;}
+}
+@-o-keyframes animarBombero
+{
+	from{left: 49%; top: 40%;}
+	to{left: 55%; top: 43%;}
+}
+@-webkit-keyframes animarBombero
+{
+	from{left: 49%; top: 40%;}
+	to{left: 55%; top: 43%;}
+}
+
+/*animacion para cuando se ocultan los botones*/
+@keyframes animarPoliciaR
+{
+	from{left: 43%; top: 43%;}
+	to{left: 49%; top: 40%;}
+}
+@-moz-keyframes animarPoliciaR
+{
+	from{left: 43%; top: 43%;}
+	to{left: 49%; top: 40%;}
+}
+@-o-keyframes animarPoliciaR
+{
+	from{left: 43%; top: 43%;}
+	to{left: 49%; top: 40%;}
+}
+@-webkit-keyframes animarPoliciaR
+{
+	from{left: 43%; top: 43%;}
+	to{left: 49%; top: 40%;}
+}
+@keyframes animarBomberoR
+{
+	from{left: 55%; top: 43%;}
+	to{left: 49%; top: 40%;}
+}
+@-moz-keyframes animarBomberoR
+{
+	from{left: 55%; top: 43%;}
+	to{left: 49%; top: 40%;}
+}
+@-o-keyframes animarBomberoR
+{
+	from{left: 55%; top: 43%;}
+	to{left: 49%; top: 40%;}
+}
+@-webkit-keyframes animarBomberoR
+{
+	from{left: 55%; top: 43%;}
+	to{left: 49%; top: 40%;}
+}
