@@ -44,5 +44,5 @@ function llamar(entidad)
 		case 3: location.href='tel:';
 		break;
 	}
-	
+	location.href = '#paginaMapa';
 }

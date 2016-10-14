@@ -2,14 +2,25 @@
 <html>
 <head>
     <title>Servicios p&uacute;blicos</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="utf-8">
+    <meta HTTP-EQUIV="Content-Type" content="text/html; charset=iso-8859-1"/>
+    <link href="css/animation.css" rel="stylesheet" type="text/css"/>
+    <link href="css/mapaGPS.css" rel="stylesheet" type="text/css"/>
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css"/>
-    <!--<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>-->
+    <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
+    <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery.mobile-1.4.5.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
     <script type="text/javascript" charset="utf-8" src="./js/main.js"></script>
-    <link href="css/animation.css" rel="stylesheet" type="text/css"/>
     <script type="text/javascript" src="js/functionsAnimation.js"></script>
+    <script type="text/javascript" src="js/servicios.js"></script>
+    <script type="text/javascript" src="js/camara.js"></script>
+    <script type="text/javascript" src="js/mapaGPS.js"></script>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/mapaGPS.js"></script>
+    <link rel="stylesheet" href="css/mapaGPS.css"/>
 </head>
 <body>
 <!--Acceso-->
@@ -95,10 +106,8 @@
             <a href="#recupera" data-role="link" data-theme="c" data-inline="true">&iquest;Olvidaste
                 tu contrase&ntilde;a?</a>
             <br>
-            <!--button id="button_login" data-theme="c"  style="width: 160px;">
-            Entrar</button-->
-            <a href="#home" data-role="button" data-theme="c"
-               style="align-content:center; width: 100%;">Entrar</a>
+            <a href="javascript: validaLogin();" data-role="button" data-theme="c"
+               data-inline="true" style="width: 160px;">Entrar</a>
         </div>
     </div>
 </div>
@@ -154,13 +163,18 @@
             <label for="text-CorreoReg">* Correo electr&oacute;nico:</label>
             <input name="text-basic" id="text-CorreoReg" value="" type="email" required>
             <label for="text-PassReg">* Contrase&ntilde;a:</label>
-            <input name="text-basic" id="text-PassReg" value="" type="password" required>
+            <input name="text-basic" id="text-PassReg" value="" type="password" maxlength="6"
+                   required>
             <label for="text-CPassReg">* Confirma contrase&ntilde;a:</label>
-            <input name="text-basic" id="text-CPassReg" value="" type="password" required>
+            <input name="text-basic" id="text-CPassReg" value="" type="password" maxlength="6"
+                   required>
             <label for="text-Cel">* Celular (10 digitos):</label>
-            <input name="text-basic" id="text-Cel" value="" type="text" size="10" maxlength="10" required>
+            <input name="text-basic" id="text-Cel" value="" type="text" size="10" maxlength="10"
+                   required>
             <div align="center">
-                <button id="button_validaReg" onclick="guardaReg()" data-theme="c" style="width: 160px;">Siguiente</button>
+                <!--<button id="button_validaReg" onclick="guardaReg()" data-theme="c" style="width: 160px;">Siguiente</button>-->
+                <a href="javascript: guardaReg();" data-role="button" data-theme="c"
+                   data-inline="true" style="width: 160px;">Siguiente</a>
             </div>
         </form>
     </div>
@@ -231,9 +245,11 @@
 
         <div data-inline="true" align="center">
             <!--<button id="button_ExitTerm" data-theme="c" style="width: 160px;">Salir</button>-->
-            <a href="javascript: exitTermAcces();" data-role="button" data-theme="c" data-inline="true" style="width: 160px;">Salir</a>
+            <a href="javascript: exitTermAcces();" data-role="button" data-theme="c"
+               data-inline="true" style="width: 160px;">Salir</a>
             <!--<a href="#acceso" data-role="button" data-theme="c" data-inline="true">Salir</a>-->
-            <a href="javascript: guardaTerm();" data-role="button" data-theme="c" data-inline="true" style="width: 160px;">Aceptar</a>
+            <a href="javascript: guardaTerm();" data-role="button" data-theme="c" data-inline="true"
+               style="width: 160px;">Aceptar</a>
         </div>
     </div>
 </div>
@@ -251,17 +267,24 @@
     <div data-role="content" align="justify" style="background-color: #ffffff;">
         <h2 align="center" style="color:#E9070B">Aviso de privacidad</h2>
         <p>
-            ND Negocios digitales con domicilio en Insurgentes Sur 1524, Po-04 Piso 10, Col. Cr&eacute;dito Constructor,
-            Delegaci&oacute;n Benito Ju&aacute;rez, M&eacute;xico D.F., C.P.03901, en cumplimiento por lo dispuesto a la Ley federal de
-            datos personales en posesi&oacute;n de los particulares, hace de su conocimiento el presente aviso de privacidad:
-            Los datos personales proporcionados directa o indirectamente por el ciudadano, no ser&aacute;n trasferibles a terceros.
+            ND Negocios digitales con domicilio en Insurgentes Sur 1524, Po-04 Piso 10, Col. Cr&eacute;dito
+            Constructor,
+            Delegaci&oacute;n Benito Ju&aacute;rez, M&eacute;xico D.F., C.P.03901, en cumplimiento
+            por lo dispuesto a la Ley federal de
+            datos personales en posesi&oacute;n de los particulares, hace de su conocimiento el
+            presente aviso de privacidad:
+            Los datos personales proporcionados directa o indirectamente por el ciudadano, no ser&aacute;n
+            trasferibles a terceros.
             El ciudadano tendr&aacute; derecho de modificar todos y cada uno de sus datos.
-            En caso de modificar el presente aviso de privacidad se dar&aacute; a conocer a los ciudadanos.
+            En caso de modificar el presente aviso de privacidad se dar&aacute; a conocer a los
+            ciudadanos.
         </p>
 
         <div data-inline="true" align="center">
-            <a href="javascript: exitTermAcces();" data-role="button" data-theme="c" data-inline="true" style="width: 160px;">Salir</a>
-            <a href="javascript: guardaPriv();" data-role="button" data-theme="c" data-inline="true" style="width: 160px;">Aceptar</a>
+            <a href="javascript: exitTermAcces();" data-role="button" data-theme="c"
+               data-inline="true" style="width: 160px;">Salir</a>
+            <a href="javascript: guardaPriv();" data-role="button" data-theme="c" data-inline="true"
+               style="width: 160px;">Aceptar</a>
         </div>
     </div>
 </div>
@@ -284,7 +307,7 @@
         <label for="text-basic">*C&oacute;digo (6 digitos):</label>
         <input name="text-basic" id="text-basic" value="" type="text">
         <div align="center">
-            <a href="#sos" data-role="button" data-inline="true">Ingresar</a>
+            <a href="#home" data-role="button" data-inline="true">Ingresar</a>
         </div>
     </div>
 </div>
@@ -304,7 +327,7 @@
         <h2 align="center" style="color:#E9070B">Bot&oacute;n de emergencia</h2>
         <center>
             <a href="#principal">
-                <input type="image" src="img/btn_ayuda_rojo.png" />
+                <input type="image" src="img/btn_ayuda_rojo.png"/>
             </a>
         </center>
     </div>
@@ -344,8 +367,22 @@
     <div data-role="footer">
         <ul data-role="listview">
             <li><a href="#servicios" data>Servicios</a></li>
-            <li><a href="#page3">Mis reportes</a></li>
+            <li>
+                <a href="javascript: cargaReportes();">Mis reportes</a>
+            </li>
         </ul>
+    </div>
+</div>
+<!-- Selector de servicios -->
+<!-- geolocalizaci&oacute;n-->
+<div data-role="page" id="paginaMapa" data-url="map-page">
+    <div data-role="header">
+        <h1>Tu posici&oacute;n actual</h1>
+    </div>
+    <div id="map-canvas"></div>
+
+    <div id="content" align="center">
+        <a href="#servicios" data-role="button" data-inline="true">Continuar</a>
     </div>
 </div>
 <!-- Selector de servicios -->
@@ -360,36 +397,52 @@
         </table>
     </div>
     <div data-role="content">
-        <form>
-            <div class="ui-field-contain">
-                <select name="select-servicios" id="select-native-1">
-                    <option value="1">Alumbrado</option>
-                    <option value="2">Aguas y alcantarillas</option>
-                    <option value="3">Obras p&uacute;blicas</option>
-                    <option value="4">Servicios p&uacute;blicos</option>
-                </select>
-            </div>
+        <div align="center">
+            <select name="select-servicios" id="selServicios" data-inline="true"
+                    onchange="getIdSelect(this)">
+                <option value="">Seleccione una opci&oacute;n</option>
+            </select>
+        </div>
+        <!-- este selector debe ser llenado seg&uacute;n el servicio que se selecciono -->
+        <br/>
+        <div align="center">
+            <select name="select-fallas" id="selFallas" data-inline="true"> </select>
+        </div>
+        <!-- cuadro de texto para ingresar el detalle del reporte -->
+        <div style="align:right">
+            <textarea id="textArea" name="textArea" style="resize:none; height:300px"
+                      data-inline="true"></textarea>
+        </div>
+        <br/>
+        <div data-role="title">
+            <td><p style="text-align:center; color: #FF0000; font-size: 20px">Fotos</p></td>
+        </div>
+        <!-- imagen que sera replazada por la foto que se tomo -->
+        <div id="fotoEdit" align="center">
+            <a id="takePhoto">
+                <img id="fotoEdit_img1" src="img/camera.png" height="50" width="50"
+                     data-inline="true" onclick="addClassImagePhoto(this)">
+                &nbsp;&nbsp;
+                <img id="fotoEdit_img2" src="img/camera.png" height="50" width="50"
+                     data-inline="true" onclick="addClassImagePhoto(this)">
+                &nbsp;&nbsp;
+                <img id="fotoEdit_img3" src="img/camera.png" height="50" width="50"
+                     data-inline="true" onclick="addClassImagePhoto(this)">
+                &nbsp;&nbsp;
+                <img id="fotoEdit_img4" src="img/camera.png" height="50" width="50"
+                     data-inline="true" onclick="addClassImagePhoto(this)">
+                &nbsp;&nbsp;
+            </a>
+        </div>
+        <br>
 
-
-            <!-- este selector debe ser llenado seg&uacute;n el servicio que se selecciono -->
-            <div class="ui-field-contain">
-                <select name="select-subservicios" id="select-native-2">
-                    <option value="1">Fuga de agua</option>
-                    <option value="2">Falta de agua</option>
-                    <option value="3">Robo coladera o mantenimiento</option>
-                    <option value="4">Desasolve</option>
-                    <option value="4">Pipa de agua</option>
-                </select>
-            </div>
-        </form>
-
-        <a href="#alumbrado" data-role="button">Alumbrado</a>
-        <a href="#aguas" data-role="button">Aguas y alcantarillados</a>
-        <a href="#obras" data-role="button">Obras p&uacute;blicas</a>
-        <a href="#publicos" data-role="button">Servicios p&uacute;blicos</a>
-        <a href="#sos" data-role="button" data-inline="true">Cancelar</a>
+        <!-- botones de captura, cancelar y enviar -->
+        <br><br>
+        <div id="content" align="center">
+            <a href="#home" data-role="button" data-inline="true">Cancelar</a>
+            <button id="sendPhoto" data-inline="true">Enviar Reporte</button>
+        </div>
     </div>
-
 </div>
 <!-- P&aacute;gina de alumbrado -->
 <div data-role="page" id="alumbrado">
@@ -415,7 +468,7 @@
             <input type="image" src="img/camera.png" width="35" height="35" onclick="">
         </div>
         <div data-inline="true" align="center">
-            <a href="#sos" data-role="button" data-inline="true">Cancelar</a>
+            <a href="#home" data-role="button" data-inline="true">Cancelar</a>
             <a href="#" data-role="button" data-inline="true">Enviar reporte</a>
         </div>
     </div>
@@ -444,7 +497,7 @@
             <button data-inline="true" data-icon="custom"></button>
         </div>
         <div data-inline="true" align="center">
-            <a href="#sos" data-role="button" data-inline="true">Cancelar</a>
+            <a href="#home" data-role="button" data-inline="true">Cancelar</a>
             <a href="#" data-role="button" data-inline="true">Enviar reporte</a>
         </div>
     </div>
@@ -502,7 +555,7 @@
             <button data-inline="true" data-icon="custom"></button>
         </div>
         <div data-inline="true" align="center">
-            <a href="#sos" data-role="button" data-inline="true">Cancelar</a>
+            <a href="#home" data-role="button" data-inline="true">Cancelar</a>
             <a href="#" data-role="button" data-inline="true" data-rel="dialog">Enviar reporte</a>
         </div>
     </div>
@@ -520,16 +573,58 @@
     </div>
     <div data-role="content">
         <div id="policia" onclick="llamar(1)">
-                
+
         </div>
         <div id="bomberos" onclick="llamar(3)">
-                
+            <a href="tel:+554445491420">llamar</a>
         </div>
         <div id="ambulancia" onclick="llamar(2)">
-                
+
         </div>
         <div id="bAyuda" onclick="mostrar();">
-                
+
+        </div>
+    </div>
+    <div data-role="footer">
+        <ul data-role="listview">
+            <li><a href="#servicios" data>Servicios</a></li>
+            <li>
+                <a href="javascript: cargaReportes();">Mis reportes</a>
+            </li>
+        </ul>
+    </div>
+</div>
+<div data-role="page" id="paginaMapa" data-url="map-page">
+    <div data-role="header">
+        <h1>Tu posici&oacute;n actual</h1>
+    </div>
+    <div id="map-canvas"></div>
+</div>
+<!--Mis Reportes-->
+<div data-role="page" id="reportes" data-theme="c">
+    <div data-role="header" data-theme="d">
+        <table>
+            <tr>
+                <td><img src="img/logo_bco.png" width="55"
+                         style="margin-left: 15px; margin-top: 5px"/></td>
+                <td><p style="margin-left: 10px;">Servicios p&uacute;blicos</p></td>
+            </tr>
+        </table>
+    </div>
+    <div data-role="content">
+        <div align="Center">
+            <h2 align="center" style="color:#E9070B">Mis reportes</h2>
+            <br/>
+        </div>
+        <div>
+            <table width="70%" border="0" align="center" cellpadding="0" cellspacing="0"
+                   class="tablaDatos" id="tblDatos">
+
+            </table>
+        </div>
+        <div align="center">
+            <a href="javascript: exitReportes();" data-role="button" data-theme="c"
+               data-inline="true" style="width: 160px;">Salir</a>
         </div>
     </div>
 </div>

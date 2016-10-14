@@ -1,0 +1,10 @@
+#map-canvas{
+    height:100%;
+    width:100%;
+    padding:0;
+    position:absolute !important;
+    top:40px;
+    righ:0px;
+    bottom:0px !important;
+    left:0px !important;
+}

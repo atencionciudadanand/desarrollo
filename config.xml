@@ -5,6 +5,10 @@
     <content src="index.html"/>
     <preference name="DisallowOverscroll" value="true"/>
     <preference name="android-minSdkVersion" value="14"/>
+    
+    <preference name="permission" value="none" />
+    <feature name="http://api.phonegap.com/1.0/camera" />
+    
     <plugin name="cordova-plugin-battery-status" source="npm" spec="~1.1.1"/>
     <plugin name="cordova-plugin-camera" source="npm" spec="~2.1.1"/>
     <plugin name="cordova-plugin-media-capture" source="npm" spec="~1.2.0"/>

@@ -1,27 +1,43 @@
-// JavaScript Document
-$(document).ready(function(e) {
-    $("#button_login").click(function(e) {
-         var usuario = $("#text-CorreoLogin").val();
-         var clave = $("#text-PassLogin").val();
-         if(usuario != "" && clave != ""){
-             re= /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/
-             if(!re.exec(usuario)){
-                 alert("Error: La dirección de correo " + email + " es incorrecta.");
-             }else{
-                  if(usuario == "fireluz@gmail.com" && clave == "12345678"){
-                      window.location.href ="#principal";
-                  }else{
-                      alert("Error: El nombre de usuario o contraseña son incorrectos.");
-                  }
-             }
-         }else{
-             alert("Error: Los campos con * son obligatorios.");
-         }
-    });
-});
+var imageCameraClicked;
+function validaLogin(){
+    var flEmail = $("#text-CorreoLogin").val();
+    var flPass = $("#text-PassLogin").val();
+    if(flEmail != "" && flPass != ""){
+        re= /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/
+        if(!re.exec(flEmail)){
+         alert("Error: La dirección de correo " + flEmail + " es incorrecta.");
+        }else{
+            jQuery.ajax({
+                type: "GET",
+                contentType: "application/json; charset=utf-8",
+                url: "http://192.168.15.104:8080/WSAtnCiu/getUserByNameAndPass/" + flEmail + "/" + flPass,
+                dataType: "json",
+                success: function (data, jqXHR, status) {
+                    console.log("data: " + data);
+                    if(data == true){
+                        alert("Exito: Acceso correcto");
+                        window.location.href ="#home";
+                    }else{
+                        alert("Error: El usuario o contraseña no es valido");
+                        window.location.href ="#login";
+                    }
+                },
+                error: function (data, jqXHR, status) {
+                    alert("Error: No se obtubo respuesta del servidor. Favor de intentar mas tarde");
+                    window.location.href ="#acceso";
+                },
+                done: function (e) {
+                    console.log("DONE");
+                }
+            });
+        }
+    }else{
+     alert("Error: Los campos con * son obligatorios.");
+    }
+}
 
 function guardaReg(){
-    removeItemReg();
+    removeItemReg(1,0);
     var email = $("#text-CorreoReg").val();
     var clave = $("#text-PassReg").val();
     var claveConfirma = $("#text-CPassReg").val();
@@ -42,7 +58,6 @@ function guardaReg(){
                     sessionStorage.setItem("ApellidoP", aPaterno);
                     sessionStorage.setItem("ApellidoM", aMaterno);
                     sessionStorage.setItem("Cel", numCel);
-                    alert(sessionStorage.getItem("Email"));
                     window.location.href ="#terminos";
                 } else{
                     alert("Error: La contraseña debe tener al menos 6 caracteres");
@@ -59,8 +74,8 @@ function guardaReg(){
 function guardaTerm(){
     var aceptaTer = 1;
     sessionStorage.setItem("Terminos", aceptaTer);
-    alert(sessionStorage.getItem("Email"));
-    alert(sessionStorage.getItem("Terminos"));
+    console.log("Terminos: ", sessionStorage.getItem("Terminos"));
+    console.log("Email: ", sessionStorage.getItem("Email"));
     window.location.href ="#privacidad";
 }
 function guardaPriv(){
@@ -70,12 +85,10 @@ function guardaPriv(){
     var aPaterno2 = sessionStorage.getItem("ApellidoP");
     var aMaterno2 = sessionStorage.getItem("ApellidoM");
     var numCel2 = sessionStorage.getItem("Cel");
-    var f = new Date();
-    var dd = f.getDate().toString;
-    var mm = f.getMonth().toString;
-    var yyy = f.getFullYear().toString;
-    var fechaAlt = yyy + "-" + mm + "-" + dd;
-
+    var fecha = new Date();
+    var fechaAlt = padStr(fecha.getFullYear()) + "-" +
+                  padStr(1 + fecha.getMonth()) + "-" +
+                  padStr(fecha.getDate());
     console.log("fechaAlt: ", fechaAlt);
 
     var contact = '{'+
@@ -99,34 +112,117 @@ function guardaPriv(){
 
     jQuery.ajax({
         type: "POST",
+        contentType: "application/json; charset=utf-8",
         url: "http://192.168.15.104:8080/WSAtnCiu/addUsuario",
         data: contact.toString(),
-        contentType: "application/json; charset=utf-8",
         dataType: "json",
         success: function (data, status, jqXHR) {
             alert("Exito: Registro Exitoso");
+            window.location.href ="#login";
         },
-
-        error: function (jqXHR, status) {
-            alert("Error: Algo fallo.");
+        error: function (data, jqXHR, status) {
+            alert("Error: No se obtubo respuesta del servidor.");
+            window.location.href ="#login";
+        },
+        done: function (e) {
+            console.log("DONE");
         }
     });
 
     //timeout: 100000,
 }
 
+function padStr(i) {
+    return (i < 10) ? "0" + i : "" + i;
+}
+
 function exitTermAcces(){
-    removeItemReg();
+    removeItemReg(1,1);
     window.location.href ="#acceso";
 }
-function removeItemReg(){
-    sessionStorage.removeItem("Email");
-    sessionStorage.removeItem("Clave");
-    sessionStorage.removeItem("Nombre");
-    sessionStorage.removeItem("ApellidoP");
-    sessionStorage.removeItem("ApellidoM");
-    sessionStorage.removeItem("Cel");
+
+function exitReportes(obj){
+    removeItemReg(1,1);
+    window.location.href ="#home";
 }
+
+function removeItemReg(idRegistro,idCReportes){
+    if(idRegistro == 1){
+        sessionStorage.removeItem("Email");
+        sessionStorage.removeItem("Clave");
+        sessionStorage.removeItem("Nombre");
+        sessionStorage.removeItem("ApellidoP");
+        sessionStorage.removeItem("ApellidoM");
+        sessionStorage.removeItem("Cel");
+    }
+    if(idCReportes ==   1){
+        sessionStorage.removeItem("data");
+    }
+}
+
+function cargaReportes(){
+    var js = '{"idUsuario": 2}';
+    var idUser = 2;
+    jQuery.ajax({
+            type: "GET",
+            contentType: "application/json; charset=utf-8",
+            url: "http://192.168.15.104:8080/WSAtnCiu/getRelPerSerByIdUser/" + idUser,
+            data: js.toString(),
+            dataType: "json",
+            success: function (data, jqXHR, status) {
+                removeItemReg(0,1);
+                var flDatos = data;
+                sessionStorage.setItem("Datos", flDatos);
+                window.location.href ="#reportes";
+                mostrarReportes(flDatos);
+            },
+            error: function (data, jqXHR, status) {
+                alert("Error: No se obtubo respuesta del servidor.");
+                console.log("data: " + data);
+                window.location.href ="#principal";
+            },
+            done: function (e) {
+                console.log("DONE");
+            }
+    });
+}
+
+function mostrarReportes(vlDatos){
+    //var flDatos = sessionStorage.getItem("Datos");
+    var flDatos = vlDatos;
+    var tablaDatos= $("#tblDatos");
+
+    var flFolio="";
+    var flStatus="";
+    var flServicio="";
+    var flFalla="";
+
+    for(i=0; i<flDatos.length;i++){
+        var regFila = flDatos[i];
+
+        flFolio=regFila.rpcFolioReporte;
+        flStatus=regFila.rpcIdEstatusServ.estDescripcion;
+        flServicio=regFila.rpcIdServicio.padreId.descripcion;
+        flFalla = regFila.rpcIdServicio.descripcion;
+        if(flStatus == "Registrado"){
+            var color = "#088A08"
+        }
+
+        tablaDatos.append("<tr><td><td><strong>Reporte: </strong></td><td>"+flFolio+"</td></td></tr>"
+                        + "<tr><td><td><strong>Servicio: </strong></td><td>"+flServicio+"</td> <td></td> <td style='color:"+color+"'><strong>"+flStatus+"</strong></td></td></tr>"
+                        + "<tr><td><td><strong>Falla: </strong></td><td>"+flFalla+"</td></td></tr>");
+    }
+
+}
+
+function addClassImagePhoto(e){
+		imageCameraClicked=e;
+}
+
+/*
+                var folio = data[0].rpcFolioReporte;
+                var StatusReporte = data[0].rpcIdEstatusServ;
+*/
 
 /*function prueba(){
     a1=parseInt(document.getElementById('a').value);
