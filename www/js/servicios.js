@@ -47,7 +47,7 @@ function getFails(v) {
 
 
         error: function () {
-            alert("Error: No se cargaron las fallas correctamente.");
+			console.dialog("Error: No se cargaron las fallas correctamente.");
         }
 	})
 }
