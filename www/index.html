@@ -19,7 +19,6 @@
     <script type="text/javascript" src="js/camara.js"></script>
     <script type="text/javascript" src="js/mapaGPS.js"></script>
     <script type="text/javascript" src="cordova.js"></script>
-    <script type="text/javascript" src="js/mapaGPS.js"></script>
     <link rel="stylesheet" href="css/mapaGPS.css"/>
 </head>
 <body>
@@ -48,6 +47,9 @@
             <br/>
             <h5>&iquest;No puedes iniciar sesi&oacute;n?</h5>
             <a href="#contacto" data-role="link" data-theme="c" data-inline="true">Cont&aacute;ctanos</a>
+			<br/>
+            <h5>Servicios</h5>
+            <a id="lnkServicios" href="#paginaMapa" data-role="link" data-theme="c" data-inline="true" onclick="showBtnGeo();">Servicios</a>
         </div>
     </div>
 </div>
@@ -376,15 +378,17 @@
 <!-- Selector de servicios -->
 <!-- geolocalizaci&oacute;n-->
 <div data-role="page" id="paginaMapa" data-url="map-page">
-    <div data-role="header">
+    
+	<div data-role="header">
         <h1>Tu posici&oacute;n actual</h1>
     </div>
     <div id="map-canvas"></div>
-
-    <div id="content" align="center">
+	
+	<div id="btnGeo" align="center">
         <a href="#servicios" data-role="button" data-inline="true">Continuar</a>
     </div>
 </div>
+
 <!-- Selector de servicios -->
 <div data-role="page" id="servicios">
     <div data-role="header" data-theme="d">
@@ -440,123 +444,7 @@
         <br><br>
         <div id="content" align="center">
             <a href="#home" data-role="button" data-inline="true">Cancelar</a>
-            <button id="sendPhoto" data-inline="true">Enviar Reporte</button>
-        </div>
-    </div>
-</div>
-<!-- P&aacute;gina de alumbrado -->
-<div data-role="page" id="alumbrado">
-    <div data-role="header" data-theme="d">
-        <table>
-            <tr>
-                <td><img src="img/logo_bco.png" width="55"
-                         style="margin-left: 15px; margin-top: 5px"/></td>
-                <td><p style="margin-left: 10px;">Servicios p&uacute;blicos</p></td>
-            </tr>
-        </table>
-    </div>
-    <div data-role="content">
-        <h2 align="center" style="color:#E9070B">Alumbrado</h2>
-        <label for="text-textArea">Describe el problema (opcional):</label>
-        <textarea id="textArea" name="textArea"></textarea>
-
-        <p>Tomar foto:</p>
-        <div data-inline="true" align="center">
-            <input type="image" src="img/camera.png" width="35" height="35" onclick="">
-            <input type="image" src="img/camera.png" width="35" height="35" onclick="">
-            <input type="image" src="img/camera.png" width="35" height="35" onclick="">
-            <input type="image" src="img/camera.png" width="35" height="35" onclick="">
-        </div>
-        <div data-inline="true" align="center">
-            <a href="#home" data-role="button" data-inline="true">Cancelar</a>
-            <a href="#" data-role="button" data-inline="true">Enviar reporte</a>
-        </div>
-    </div>
-</div>
-<!-- P&aacute;gina de Aguas y alcantarillados -->
-<div data-role="page" id="obras">
-    <div data-role="header" data-theme="d">
-        <table>
-            <tr>
-                <td><img src="img/logo_bco.png" width="55"
-                         style="margin-left: 15px; margin-top: 5px"/></td>
-                <td><p style="margin-left: 10px;">Servicios p&uacute;blicos</p></td>
-            </tr>
-        </table>
-    </div>
-    <div data-role="content">
-        <h2 align="center" style="color:#E9070B">Obras p&uacute;blicas</h2>
-        <label for="text-textArea">Describe el problema (opcional):</label>
-        <textarea id="textArea" name="textArea"></textarea>
-
-        <p>Tomar foto:</p>
-        <div data-inline="true" align="center">
-            <button data-inline="true" src="img/camera.png"></button>
-            <button data-inline="true" data-icon="custom"></button>
-            <button data-inline="true" data-icon="custom"></button>
-            <button data-inline="true" data-icon="custom"></button>
-        </div>
-        <div data-inline="true" align="center">
-            <a href="#home" data-role="button" data-inline="true">Cancelar</a>
-            <a href="#" data-role="button" data-inline="true">Enviar reporte</a>
-        </div>
-    </div>
-</div>
-<!-- P&aacute;gina obras p&uacute;blicas -->
-<div data-role="page" id="aguas">
-    <div data-role="header" data-theme="d">
-        <table>
-            <tr>
-                <td><img src="img/logo_bco.png" width="55"
-                         style="margin-left: 15px; margin-top: 5px"/></td>
-                <td><p style="margin-left: 10px;">Servicios p&uacute;blicos</p></td>
-            </tr>
-        </table>
-    </div>
-    <div data-role="content">
-        <h2 align="center" style="color:#E9070B">Aguas y alcantarillados</h2>
-        <label for="text-textArea">Describe el problema (opcional):</label>
-        <textarea id="textArea" name="textArea"></textarea>
-
-        <p>Tomar foto:</p>
-        <div data-inline="true" align="center">
-            <button data-inline="true" src="img/camera.png"></button>
-            <button data-inline="true" data-icon="custom"></button>
-            <button data-inline="true" data-icon="custom"></button>
-            <button data-inline="true" data-icon="custom"></button>
-        </div>
-        <div data-inline="true" align="center">
-            <a href="#servicios" data-role="button" data-inline="true">Cancelar</a>
-            <a href="#" data-role="button" data-inline="true">Enviar reporte</a>
-        </div>
-    </div>
-</div>
-<!-- P&aacute;gina de servicios p&uacute;blicos -->
-<div data-role="page" id="publicos">
-    <div data-role="header" data-theme="d">
-        <table>
-            <tr>
-                <td><img src="img/logo_bco.png" width="55"
-                         style="margin-left: 15px; margin-top: 5px"/></td>
-                <td><p style="margin-left: 10px;">Servicios p&uacute;blicos</p></td>
-            </tr>
-        </table>
-    </div>
-    <div data-role="content">
-        <h2 align="center" style="color:#E9070B">Servicios p&uacute;blicos</h2>
-        <label for="text-textArea">Describe el problema (opcional):</label>
-        <textarea id="textArea" name="textArea"></textarea>
-
-        <p>Tomar foto:</p>
-        <div data-inline="true" align="center">
-            <button data-inline="true" src="img/camera.png"></button>
-            <button data-inline="true" data-icon="custom"></button>
-            <button data-inline="true" data-icon="custom"></button>
-            <button data-inline="true" data-icon="custom"></button>
-        </div>
-        <div data-inline="true" align="center">
-            <a href="#home" data-role="button" data-inline="true">Cancelar</a>
-            <a href="#" data-role="button" data-inline="true" data-rel="dialog">Enviar reporte</a>
+			<a id="sendPhoto"  href="#home" data-role="button" data-inline="true">Enviar Reporte</a>
         </div>
     </div>
 </div>
@@ -594,19 +482,14 @@
     </div>
     <div data-role="footer">
         <ul data-role="listview">
-            <li><a href="#servicios" data>Servicios</a></li>
+            <li><a href="#paginaMapa" data>Servicios</a></li>
             <li>
                 <a href="javascript: cargaReportes();">Mis reportes</a>
             </li>
         </ul>
     </div>
 </div>
-<div data-role="page" id="paginaMapa" data-url="map-page">
-    <div data-role="header">
-        <h1>Tu posici&oacute;n actual</h1>
-    </div>
-    <div id="map-canvas"></div>
-</div>
+
 <!--Mis Reportes-->
 <div data-role="page" id="reportes" data-theme="c">
     <div data-role="header" data-theme="d">

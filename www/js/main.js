@@ -121,7 +121,6 @@ function guardaPriv(){
             window.location.href ="#login";
         },
         error: function (data, jqXHR, status) {
-            alert("Error: No se obtubo respuesta del servidor.");
             window.location.href ="#login";
         },
         done: function (e) {
