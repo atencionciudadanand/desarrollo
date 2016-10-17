@@ -10,7 +10,7 @@ function validaLogin(){
             jQuery.ajax({
                 type: "GET",
                 contentType: "application/json; charset=utf-8",
-                url: "http://192.168.15.104:8080/WSAtnCiu/getUserByNameAndPass/" + flEmail + "/" + flPass,
+                url: "http://192.168.15.106:8080/WSAtnCiu/getUserByNameAndPass/" + flEmail + "/" + flPass,
                 dataType: "json",
                 success: function (data, jqXHR, status) {
                     console.log("data: " + data);
@@ -113,7 +113,7 @@ function guardaPriv(){
     jQuery.ajax({
         type: "POST",
         contentType: "application/json; charset=utf-8",
-        url: "http://192.168.15.104:8080/WSAtnCiu/addUsuario",
+        url: "http://192.168.15.106:8080/WSAtnCiu/addUsuario",
         data: contact.toString(),
         dataType: "json",
         success: function (data, status, jqXHR) {
@@ -166,7 +166,7 @@ function cargaReportes(){
     jQuery.ajax({
             type: "GET",
             contentType: "application/json; charset=utf-8",
-            url: "http://192.168.15.104:8080/WSAtnCiu/getRelPerSerByIdUser/" + idUser,
+            url: "http://192.168.15.106:8080/WSAtnCiu/getRelPerSerByIdUser/" + idUser,
             data: js.toString(),
             dataType: "json",
             success: function (data, jqXHR, status) {

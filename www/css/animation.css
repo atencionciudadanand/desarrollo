@@ -1,15 +1,23 @@
-#contenedor
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#contenedorAyuda
 {
-	position: relative;
+    width: 220px;
+    height: 220px;
+    margin-top: 20px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
 }
 #bAyuda
 {
 	width: 161px;
 	height: 161px;
 	background: url(../img/btn_ayuda_rojo.png) no-repeat;
-	position: absolute;
-	top: 50%;
-	left: 45%;
+	position: relative;
 	cursor: pointer;
 }
 /*mostrar botones con animacion*/
@@ -18,8 +26,7 @@
 	height: 48px;
 	background: url(../img/iconoPolicia.png) no-repeat;
 	position: absolute;
-	top: 43%;
-	left: 43%;
+	top: 20%;
 	display: none;
 	cursor: pointer;
 	animation: animarPolicia 1s;
@@ -31,9 +38,10 @@
 	width: 48px;
 	height: 48px;
 	background: url(../img/iconoAmbulancia.png) no-repeat;
-	position: absolute;
-	top: 40%;
-	left: 49%;
+	position: relative;
+        margin-bottom: 10px;
+        left: 50%;
+        transform: translate(-50%);
 	display: none;
 	cursor: pointer;
 }
@@ -42,8 +50,8 @@
 	height: 48px;
 	background: url(../img/iconoBombero.png) no-repeat;
 	position: absolute;
-	top: 43%;
-	left: 55%;
+	top: 20%;
+	left: 77%;
 	display: none;
 	cursor: pointer;
 	animation: animarBombero 1s;
@@ -58,9 +66,8 @@
 	height: 48px;
 	background: url(../img/iconoPolicia.png) no-repeat;
 	position: absolute;
-	top: 40%;
-	left: 49%;
-	display: none;
+	left: 50%;
+	display: none;/
 	cursor: pointer;
 	animation: animarPoliciaR 1s;
 	-moz-animation: animarPoliciaR 1s;
@@ -74,7 +81,7 @@
 	position: absolute;
 	top: 40%;
 	left: 49%;
-	display: none;
+	/*display: none;*/
 	cursor: pointer;
 	animation: animarBomberoR 1s;
 	-moz-animation: animarBomberoR 1s;
@@ -86,83 +93,99 @@
 /*animacion para cuando se muestran los botones*/
 @keyframes animarPolicia
 {
-	from{left: 49%; top: 40%;}
-	to{left: 43%; top: 43%;}
+	0%{left: 40%; top: 0%;}
+	50%{left: 0%; top: 0%;}
+    100%{left: 0%; top: 20%;}
 }
 @-moz-keyframes animarPolicia
 {
-	from{left: 49%; top: 40%;}
-	to{left: 43%; top: 43%;}
+	0%{left: 40%; top: 0%;}
+	50%{left: 0%; top: 0%;}
+    100%{left: 0%; top: 20%;}
 }
 @-o-keyframes animarPolicia
 {
-	from{left: 49%; top: 40%;}
-	to{left: 43%; top: 43%;}
+	0%{left: 40%; top: 0%;}
+	50%{left: 0%; top: 0%;}
+    100%{left: 0%; top: 20%;}
 }
 @-webkit-keyframes animarPolicia
 {
-	from{left: 49%; top: 40%;}
-	to{left: 43%; top: 43%;}
+	0%{left: 40%; top: 0%;}
+	50%{left: 0%; top: 0%;}
+    100%{left: 0%; top: 20%;}
 }
 @keyframes animarBombero
 {
-	from{left: 49%; top: 40%;}
-	to{left: 55%; top: 43%;}
+	0%{left: 40%; top: 0%;}
+	50%{left: 77%; top: 0%;}
+    100%{left: 77%; top: 20%;}
 }
 @-moz-keyframes animarBombero
 {
-	from{left: 49%; top: 40%;}
-	to{left: 55%; top: 43%;}
+	0%{left: 40%; top: 0%;}
+	50%{left: 77%; top: 0%;}
+    100%{left: 77%; top: 20%;}
 }
 @-o-keyframes animarBombero
 {
-	from{left: 49%; top: 40%;}
-	to{left: 55%; top: 43%;}
+	0%{left: 40%; top: 0%;}
+	50%{left: 77%; top: 0%;}
+    100%{left: 77%; top: 20%;}
 }
 @-webkit-keyframes animarBombero
 {
-	from{left: 49%; top: 40%;}
-	to{left: 55%; top: 43%;}
+	0%{left: 40%; top: 0%;}
+	50%{left: 77%; top: 0%;}
+    100%{left: 77%; top: 20%;}
 }
 
 /*animacion para cuando se ocultan los botones*/
 @keyframes animarPoliciaR
 {
-	from{left: 43%; top: 43%;}
-	to{left: 49%; top: 40%;}
+	0%{left: 0%; top: 20%;}
+	50%{left: 0%; top: 0%;}
+    100%{left: 40%; top: 0%;}
 }
 @-moz-keyframes animarPoliciaR
 {
-	from{left: 43%; top: 43%;}
-	to{left: 49%; top: 40%;}
+	0%{left: 0%; top: 20%;}
+	50%{left: 0%; top: 0%;}
+    100%{left: 40%; top: 0%;}
 }
 @-o-keyframes animarPoliciaR
 {
-	from{left: 43%; top: 43%;}
-	to{left: 49%; top: 40%;}
+	0%{left: 0%; top: 20%;}
+	50%{left: 0%; top: 0%;}
+    100%{left: 40%; top: 0%;}
 }
 @-webkit-keyframes animarPoliciaR
 {
-	from{left: 43%; top: 43%;}
-	to{left: 49%; top: 40%;}
+	0%{left: 0%; top: 20%;}
+	50%{left: 0%; top: 0%;}
+    100%{left: 40%; top: 0%;}
 }
 @keyframes animarBomberoR
 {
-	from{left: 55%; top: 43%;}
-	to{left: 49%; top: 40%;}
+	0%{left: 77%; top: 20%;}
+	50%{left: 77%; top: 0%;}
+    100%{left: 40%; top: 0%;}
 }
 @-moz-keyframes animarBomberoR
 {
-	from{left: 55%; top: 43%;}
-	to{left: 49%; top: 40%;}
+	0%{left: 77%; top: 20%;}
+	50%{left: 77%; top: 0%;}
+    100%{left: 40%; top: 0%;}
 }
 @-o-keyframes animarBomberoR
 {
-	from{left: 55%; top: 43%;}
-	to{left: 49%; top: 40%;}
+	0%{left: 77%; top: 20%;}
+	50%{left: 77%; top: 0%;}
+    100%{left: 40%; top: 0%;}
 }
 @-webkit-keyframes animarBomberoR
 {
-	from{left: 55%; top: 43%;}
-	to{left: 49%; top: 40%;}
+	0%{left: 77%; top: 20%;}
+	50%{left: 77%; top: 0%;}
+    100%{left: 40%; top: 0%;}
 }
