@@ -8,3 +8,9 @@
     bottom:0px !important;
     left:0px !important;
 }
+
+#terminarEmergencia{
+    
+    display: none;
+    width: 50px;
+}

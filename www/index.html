@@ -384,6 +384,9 @@
 	<div id="btnGeo" align="center">
         <a href="#servicios" data-role="button" data-inline="true">Continuar</a>
     </div>
+    <div id="terminarEmergencia" align="center">
+       <a href="" data-role="button" onclick="refrescarHome()">Terminar Emergencia</a>
+    </div>
 </div>
 <!-- Selector de servicios -->
 <div data-role="page" id="servicios">
@@ -420,17 +423,13 @@
         <!-- imagen que sera replazada por la foto que se tomo -->
         <div id="fotoEdit" align="center">
             <a id="takePhoto">
-                <img id="fotoEdit_img1" src="img/camera.png" height="50" width="50"
-                     data-inline="true" onclick="addClassImagePhoto(this)">
+                <img id="fotoEdit_img1" src="img/camera.png" data-inline="true" width="50px" height="50px" onclick="addClassImagePhoto(1)">
                 &nbsp;&nbsp;
-                <img id="fotoEdit_img2" src="img/camera.png" height="50" width="50"
-                     data-inline="true" onclick="addClassImagePhoto(this)">
+                <img id="fotoEdit_img2" src="img/camera.png" data-inline="true" width="50px" height="50px" onclick="addClassImagePhoto(2)">
                 &nbsp;&nbsp;
-                <img id="fotoEdit_img3" src="img/camera.png" height="50" width="50"
-                     data-inline="true" onclick="addClassImagePhoto(this)">
+                <img id="fotoEdit_img3" src="img/camera.png" data-inline="true" width="50px" height="50px" onclick="addClassImagePhoto(3)">
                 &nbsp;&nbsp;
-                <img id="fotoEdit_img4" src="img/camera.png" height="50" width="50"
-                     data-inline="true" onclick="addClassImagePhoto(this)">
+                <img id="fotoEdit_img4" src="img/camera.png" data-inline="true" width="50px" height="50px" onclick="addClassImagePhoto(4)">
                 &nbsp;&nbsp;
             </a>
         </div>
@@ -479,8 +478,9 @@
     <div data-role="footer">
         <ul data-role="listview">
             <li>
-				<a id="lnkServicios" href="#paginaMapa" data-role="link" data-theme="c" data-inline="true" onclick="showBtnGeo();">Servicios</a>
-			</li>
+                <a id="lnkServicios" href="#paginaMapa" data-role="link" data-theme="c"
+                   data-inline="true" onclick="showBtnGeo();">Servicios</a>
+            </li>
             <li>
                 <a href="javascript: cargaReportes();">Mis reportes</a>
             </li>

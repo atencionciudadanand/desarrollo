@@ -44,5 +44,6 @@ function llamar(entidad)
 		case 3: location.href='tel:';
 		break;
 	}
+    mostrarBtnTerminarEmergencia();
 	location.href = '#paginaMapa';
 }

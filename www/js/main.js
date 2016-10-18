@@ -10,7 +10,7 @@ function validaLogin(){
             jQuery.ajax({
                 type: "GET",
                 contentType: "application/json; charset=utf-8",
-                url: "http://192.168.15.106:8080/WSAtnCiu/getUserByNameAndPass/" + flEmail + "/" + flPass,
+                url: "http://189.210.245.211:7080/WSAtnCiu/getUserByNameAndPass/" + flEmail + "/" + flPass,
                 dataType: "json",
                 success: function (data, jqXHR, status) {
                     console.log("data: " + data);
@@ -113,7 +113,7 @@ function guardaPriv(){
     jQuery.ajax({
         type: "POST",
         contentType: "application/json; charset=utf-8",
-        url: "http://192.168.15.106:8080/WSAtnCiu/addUsuario",
+        url: "http://189.210.245.211:7080/WSAtnCiu/addUsuario",
         data: contact.toString(),
         dataType: "json",
         success: function (data, status, jqXHR) {
@@ -143,6 +143,7 @@ function exitTermAcces(){
 function exitReportes(obj){
     removeItemReg(1,1);
     window.location.href ="#home";
+    window.location.reload();
 }
 
 function removeItemReg(idRegistro,idCReportes){
@@ -165,7 +166,7 @@ function cargaReportes(){
     jQuery.ajax({
             type: "GET",
             contentType: "application/json; charset=utf-8",
-            url: "http://192.168.15.106:8080/WSAtnCiu/getRelPerSerByIdUser/" + idUser,
+            url: "http://189.210.245.211:7080/WSAtnCiu/getRelPerSerByIdUser/" + idUser,
             data: js.toString(),
             dataType: "json",
             success: function (data, jqXHR, status) {
@@ -270,3 +271,14 @@ function borrar(){
         }
     });
 }*/
+function mostrarBtnTerminarEmergencia()
+{
+    //alert("entro al js");
+    document.getElementById('terminarEmergencia').style.display = "inline";
+}
+
+function refrescarHome()
+{
+    location.href = "#home";
+    location.reload();
+}
