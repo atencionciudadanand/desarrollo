@@ -1,6 +1,6 @@
 <widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="mx.com.negocios-digitales" version="1.0.5">
     <name>atencionCiudadana</name>
-    <description>App de atención ciudadana creada por Negocios Digitales</description>
+    <description>App de atencion ciudadana creada por Negocios Digitales.</description>
     <author href="http://www.negocios-digitales.com.mx" email="marco.demetrio@negocios-digitales.com.mx">PhoneGap Team</author>
     <content src="index.html"/>
     <preference name="DisallowOverscroll" value="true"/>

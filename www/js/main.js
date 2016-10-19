@@ -74,7 +74,9 @@ function guardaReg(){
                         }
                     }else{
                         alert("Error: El usuario ya se encuentra registrado");
-                        window.location.href ="#acceso";
+                        window.location.href ="#registro";
+                        window.location.reload();
+
                     }
                 },
                 error: function (data, jqXHR, status) {
