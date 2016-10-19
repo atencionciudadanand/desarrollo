@@ -39,9 +39,9 @@
 	height: 48px;
 	background: url(../img/iconoAmbulancia.png) no-repeat;
 	position: relative;
-        margin-bottom: 10px;
-        left: 50%;
-        transform: translate(-50%);
+    margin-bottom: 10px;
+    left: 50%;
+    transform: translate(-50%);
 	display: none;
 	cursor: pointer;
 }

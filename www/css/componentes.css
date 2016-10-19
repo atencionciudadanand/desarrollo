@@ -1,0 +1,119 @@
+.menuDesp
+{
+    height: 60px;
+    width: 60px;
+    padding: 5px;
+    position: absolute;
+    right: 0%;
+    top: 0%;
+}
+
+.menuDesp:hover
+{
+    cursor: pointer;
+    background-color: rgba(104,104,104,0.3);
+}
+
+.desplegable
+{
+    margin: 0;
+    width: 50%;
+    position: absolute;
+    top: 71px;
+    right: 0%;
+    z-index: 100;
+    background: #bbb;
+    display: none;
+    animation: animarMenu 1s;
+	-moz-animation: animarMenu 1s;
+	-o-animation: animarMenu 1s;
+	-webkit-animation: animarMenu 1s;
+}
+
+.desplegableR
+{
+    margin: 0;
+    width: 50%;
+    position: absolute;
+    top: -50%;
+    right: 0%;
+    z-index: 100;
+    background: #bbb;
+    display: block;
+    animation: animarMenuR 1s;
+	-moz-animation: animarMenuR 1s;
+	-o-animation: animarMenuR 1s;
+	-webkit-animation: animarMenuR 1s;
+}
+
+.desplegable ul
+{
+    list-style: none;
+}
+
+.desplegable ul li
+{
+    border-top: 1px solid #fff;
+}
+
+.desplegable ul li:hover
+{
+    background: rgba(0,0,0,0.3);
+}
+
+.desplegable ul li a
+{
+    display: block;
+    padding: 5px 10px;
+    text-decoration: none;
+    color: #000000;
+    font-size: 15px
+}
+
+@keyframes animarMenu
+{
+    from{right: 0%;top: -500px;}
+    to{right: 0%;top: 71px;}
+}
+
+@-o-keyframes animarMenu
+{
+    from{right: 0%;top: -500px;}
+    to{right: 0%;top: 71px;}
+}
+
+@-moz-keyframes animarMenu
+{
+    from{right: 0%;top: -500px;}
+    to{right: 0%;top: 71px;}
+}
+
+@-webkit-keyframes animarMenu
+{
+    from{right: 0%;top: -500px;}
+    to{right: 0%;top: 71px;}
+}
+
+@keyframes animarMenuR
+{
+    from{right: 0%;top: 71px;}
+    to{right: 0%;top: -500px;}
+}
+
+@-o-keyframes animarMenuR
+{
+    from{right: 0%;top: 71px;}
+    to{right: 0%;top: -500px;}
+}
+
+@-moz-keyframes animarMenuR
+{
+    from{right: 0%;top: 71px;}
+    to{right: 0%;top: -500px;}
+}
+
+@-webkit-keyframes animarMenuR
+{
+    from{right: 0%;top: 71px;}
+    to{right: 0%;top: -500px;}
+}

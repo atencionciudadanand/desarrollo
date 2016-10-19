@@ -8,6 +8,8 @@
     <link href="css/mapaGPS.css" rel="stylesheet" type="text/css"/>
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css"/>
     <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
     <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
@@ -19,7 +21,7 @@
     <script type="text/javascript" src="js/camara.js"></script>
     <script type="text/javascript" src="js/mapaGPS.js"></script>
     <script type="text/javascript" src="cordova.js"></script>
-    <link rel="stylesheet" href="css/mapaGPS.css"/>
+    <link rel="stylesheet" href="css/componentes.css"/>
 </head>
 <body>
 <!--Acceso-->
@@ -132,7 +134,7 @@
                 <label for="text-CorreoReg">* Correo electr&oacute;nico:</label>
                 <input name="text-CorreoRecuperaC" id="text-CorreoRecuperaC" value="" type="text">
                 <div align="center">
-                    <a href="#terminos" data-role="button" data-theme="c"
+                    <a href="#" data-role="button" data-theme="c"
                        style="align-content:center; width: 160px;">Enviar</a>
                 </div>
             </form>
@@ -375,13 +377,13 @@
 <!-- Selector de servicios -->
 <!-- geolocalizaci&oacute;n-->
 <div data-role="page" id="paginaMapa" data-url="map-page">
-    
-	<div data-role="header">
+
+    <div data-role="header">
         <h1>Tu posici&oacute;n actual</h1>
     </div>
     <div id="map-canvas"></div>
-	
-	<div id="btnGeo" align="center">
+
+    <div id="btnGeo" align="center">
         <a href="#servicios" data-role="button" data-inline="true">Continuar</a>
     </div>
     <div id="terminarEmergencia" align="center">
@@ -391,6 +393,19 @@
 <!-- Selector de servicios -->
 <div data-role="page" id="servicios">
     <div data-role="header" data-theme="d">
+       <label class="menuDesp" onclick="muestraMenu()">
+           <img src="img/bullet_black.png" style="width:50px; height:50px;"/>
+        </label>
+            <div name="desplegable"  class="desplegable">
+                <ul>
+                    <li><a href="#paginaMapa" onclick="showBtnGeo();">Servicios</a></li>
+                    <li><a href="javascript: cargaReportes();">Mis reportes</a></li>
+                    <li><a href="">Instrucciones</a></li>
+                    <li><a href="#terminos">T&eacute;rminos y condiciones</a></li>
+                    <li><a href="#privacidad">Ley de protecci&oacute;n de datos personales</a></li>
+                    <li><a href="javascript: logOut();">Cerrar Sesi&oacute;n</a></li>
+                </ul>
+            </div>
         <table>
             <tr>
                 <td><img src="img/logo_bco.png" width="55"
@@ -423,13 +438,17 @@
         <!-- imagen que sera replazada por la foto que se tomo -->
         <div id="fotoEdit" align="center">
             <a id="takePhoto">
-                <img id="fotoEdit_img1" src="img/camera.png" data-inline="true" width="50px" height="50px" onclick="addClassImagePhoto(1)">
+                <img id="fotoEdit_img1" src="img/camera.png" height="50" width="50"
+                     data-inline="true" onclick="addClassImagePhoto(this)">
                 &nbsp;&nbsp;
-                <img id="fotoEdit_img2" src="img/camera.png" data-inline="true" width="50px" height="50px" onclick="addClassImagePhoto(2)">
+                <img id="fotoEdit_img2" src="img/camera.png" height="50" width="50"
+                     data-inline="true" onclick="addClassImagePhoto(this)">
                 &nbsp;&nbsp;
-                <img id="fotoEdit_img3" src="img/camera.png" data-inline="true" width="50px" height="50px" onclick="addClassImagePhoto(3)">
+                <img id="fotoEdit_img3" src="img/camera.png" height="50" width="50"
+                     data-inline="true" onclick="addClassImagePhoto(this)">
                 &nbsp;&nbsp;
-                <img id="fotoEdit_img4" src="img/camera.png" data-inline="true" width="50px" height="50px" onclick="addClassImagePhoto(4)">
+                <img id="fotoEdit_img4" src="img/camera.png" height="50" width="50"
+                     data-inline="true" onclick="addClassImagePhoto(this)">
                 &nbsp;&nbsp;
             </a>
         </div>
@@ -439,13 +458,26 @@
         <br><br>
         <div id="content" align="center">
             <a href="#home" data-role="button" data-inline="true">Cancelar</a>
-			<a id="sendPhoto"  href="#home" data-role="button" data-inline="true">Enviar Reporte</a>
+			<a href="javascript: sendReport();" data-role="button" data-theme="c"data-inline="true" style="width: 160px;">Enviar Reporte</a>
         </div>
     </div>
 </div>
 <!-- P&aacute;gina del Home-->
 <div data-role="page" id="home">
     <div data-role="header" data-theme="d">
+        <label class="menuDesp" onclick="muestraMenu()">
+           <img src="img/bullet_black.png" style="width:50px; height:50px;"/>
+        </label>
+            <div name = "desplegable" class="desplegable">
+                <ul>
+                    <li><a href="#paginaMapa" onclick="showBtnGeo();">Servicios</a></li>
+                    <li><a href="javascript: cargaReportes();">Mis reportes</a></li>
+                    <li><a href="">Instrucciones</a></li>
+                    <li><a href="#terminos">T&eacute;rminos y condiciones</a></li>
+                    <li><a href="#privacidad">Ley de protecci&oacute;n de datos personales</a></li>
+                    <li><a href="javascript: logOut();">Cerrar Sesi&oacute;n</a></li>
+                </ul>
+            </div>
         <table>
             <tr>
                 <td><img src="img/logo_bco.png" width="55"
@@ -455,25 +487,25 @@
         </table>
     </div>
     <div data-role="content">
-      <center>
-          <h2 align="center" style="color:#E9070B">Bot&oacute;n de emergencia</h2>
-      </center>
-       <div id="contenedorAyuda">
-                <div id="policia"  onclick="llamar(1)">
+        <center>
+            <h2 align="center" style="color:#E9070B">Bot&oacute;n de emergencia</h2>
+        </center>
+        <div id="contenedorAyuda">
+            <div id="policia" onclick="llamar(1)">
 
-                </div>
-                <div id="bomberos" onclick="llamar(3)">
-                </div>
-                <div id="ambulancia" class="ambulancia" onclick="llamar(2)">
+            </div>
+            <div id="bomberos" onclick="llamar(3)">
+            </div>
+            <div id="ambulancia" class="ambulancia" onclick="llamar(2)">
 
-                </div>
+            </div>
             <center>
                 <div id="bAyuda" onclick="mostrar();">
 
                 </div>
             </center>
         </div>
-        
+
     </div>
     <div data-role="footer">
         <ul data-role="listview">
@@ -484,13 +516,28 @@
             <li>
                 <a href="javascript: cargaReportes();">Mis reportes</a>
             </li>
+            <li>
+                <a href="javascript: logOut();">Cerrar Sesi&oacute;n</a>
+            </li>
         </ul>
     </div>
 </div>
-
 <!--Mis Reportes-->
 <div data-role="page" id="reportes" data-theme="c">
     <div data-role="header" data-theme="d">
+       <label class="menuDesp" onclick="muestraMenu()">
+           <img src="img/bullet_black.png" style="width:50px; height:50px;"/>
+        </label>
+            <div name = "desplegable" class="desplegable">
+                <ul>
+                    <li><a href="#paginaMapa" onclick="showBtnGeo();">Servicios</a></li>
+                    <li><a href="javascript: cargaReportes();">Mis reportes</a></li>
+                    <li><a href="">Instrucciones</a></li>
+                    <li><a href="#terminos">T&eacute;rminos y condiciones</a></li>
+                    <li><a href="#privacidad">Ley de protecci&oacute;n de datos personales</a></li>
+                    <li><a href="javascript: logOut();">Cerrar Sesi&oacute;n</a></li>
+                </ul>
+            </div>
         <table>
             <tr>
                 <td><img src="img/logo_bco.png" width="55"

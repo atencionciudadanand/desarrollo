@@ -7,11 +7,10 @@ $( document ).on( "pageinit", "#paginaMapa", function(e,data) {
     var defaultPos = new google.maps.LatLng(19.289168, -99.653440);
 
     if (navigator.geolocation) {
-            function exito(pos) {
-                MuestraMapa(new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude));
-
-            }
-            function falla(error) {
+		function exito(pos) {
+			MuestraMapa(new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude));
+		}
+        function falla(error) {
             //si falla mostrar mpara en posicion por defecto
                 alert('Error en servicio Geolocalizador');
                 MuestraMapa(defaultPos);
@@ -22,34 +21,38 @@ $( document ).on( "pageinit", "#paginaMapa", function(e,data) {
         //timeout: el tiempo maximo que se espera para obtener la posicion en este caso 5 segundos
             var options = {maximumAge: 500000, enableHighAccuracy:true, timeout: 5000};
             navigator.geolocation.getCurrentPosition(exito, falla, options );
-        }//FIN IF
-        else {
+    }//FIN IF
+	else {
         MuestraMapa(defaultPos);  // No soporta geolocalizacion y dibuja el mapa en posicion Default
          }
 
          //FUNCION DIBUJAR MAPa
-         function MuestraMapa(latlng) {
+	function MuestraMapa(latlng) {
 
-            var myOptions = {
-            zoom: 16,
-            center: latlng,
-            disableDefaultUI: true,
-            mapTypeId: google.maps.MapTypeId.ROADMAP};
+		//Asignación del longitud y latitud para la persistencia de la ubicación.
+		sessionStorage.setItem("latlng", latlng);
+		
+		var myOptions = {
+        zoom: 16,
+        center: latlng,
+        disableDefaultUI: true,
+        mapTypeId: google.maps.MapTypeId.ROADMAP};
 
-            var map = new google.maps.Map(document.getElementById("map-canvas"), myOptions);
-            var infowindow = new google.maps.InfoWindow({
-                      position: latlng,
-                      content: '<p>Tu posición actual</p>'+latlng
-                      });
+        var map = new google.maps.Map(document.getElementById("map-canvas"), myOptions);
+        var infowindow = new google.maps.InfoWindow({
+			position: latlng,
+			content: '<p>Tu posición actual</p>'+latlng
+		});
 
-            var marker = new google.maps.Marker({
-                position: latlng,
-                map: map,
-                title: "Mi posición",
-                animation: google.maps.Animation.DROP
-            });
-            google.maps.event.addListener(marker, 'click', function() {infowindow.open(map,marker);});
+        var marker = new google.maps.Marker({
+			position: latlng,
+            map: map,
+            title: "Mi posición",
+            animation: google.maps.Animation.DROP
+		});
+		
+		google.maps.event.addListener(marker, 'click', function() {infowindow.open(map,marker);});
 
-         }// Fin muestra mapa
+	}// Fin muestra mapa
 
 });
