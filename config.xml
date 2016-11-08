@@ -1,10 +1,10 @@
-<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="mx.com.negocios-digitales" version="1.0.5">
+<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="mx.com.negocios-digitales" version="1.0.8">
     <name>atencionCiudadana</name>
     <description>App de atencion ciudadana creada por Negocios Digitales.</description>
     <author href="http://www.negocios-digitales.com.mx" email="marco.demetrio@negocios-digitales.com.mx">PhoneGap Team</author>
     <content src="index.html"/>
     <preference name="DisallowOverscroll" value="true"/>
-    <preference name="android-minSdkVersion" value="14"/>
+    <preference name="android-minSdkVersion" value="19"/>
     
     <preference name="permission" value="none" />
     <feature name="http://api.phonegap.com/1.0/camera" />

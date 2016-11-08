@@ -14,3 +14,12 @@
     display: none;
     width: 50px;
 }
+
+#geoServicios{
+	height:300px !important;
+    width:300px !important;
+    padding:0;
+    position:relative !important;
+	left:50%;
+	transform:translate(-50%);
+}

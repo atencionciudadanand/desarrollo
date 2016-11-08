@@ -1,7 +1,4 @@
-function showBtnGeo(){
-	document.getElementById('btnGeo').style.display = 'block';
-}
-
+//var coordenadasg;
 $( document ).on( "pageinit", "#paginaMapa", function(e,data) {
 
     var defaultPos = new google.maps.LatLng(19.289168, -99.653440);
@@ -12,7 +9,6 @@ $( document ).on( "pageinit", "#paginaMapa", function(e,data) {
 		}
         function falla(error) {
             //si falla mostrar mpara en posicion por defecto
-                alert('Error en servicio Geolocalizador');
                 MuestraMapa(defaultPos);
             }
 
@@ -29,7 +25,7 @@ $( document ).on( "pageinit", "#paginaMapa", function(e,data) {
          //FUNCION DIBUJAR MAPa
 	function MuestraMapa(latlng) {
 
-		//Asignación del longitud y latitud para la persistencia de la ubicación.
+		//Asignaci\u00f3n del longitud y latitud para la persistencia de la ubicaci\u00f3n.
 		sessionStorage.setItem("latlng", latlng);
 		
 		var myOptions = {
@@ -41,13 +37,13 @@ $( document ).on( "pageinit", "#paginaMapa", function(e,data) {
         var map = new google.maps.Map(document.getElementById("map-canvas"), myOptions);
         var infowindow = new google.maps.InfoWindow({
 			position: latlng,
-			content: '<p>Tu posición actual</p>'+latlng
+			content: '<p>Tu posici\u00f3n actual</p>'+latlng
 		});
 
         var marker = new google.maps.Marker({
 			position: latlng,
             map: map,
-            title: "Mi posición",
+            title: "Mi posici\u00f3n",
             animation: google.maps.Animation.DROP
 		});
 		
@@ -56,3 +52,23 @@ $( document ).on( "pageinit", "#paginaMapa", function(e,data) {
 	}// Fin muestra mapa
 
 });
+
+function obtenerCoordenadas() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+    } else { 
+        //alert("Error al obtener las coordenadas");
+        mostrarMensaje("home", "", "Error", "Error al obtener las coordenadas", 1, 0);
+        sessionStorage.setItem("coordenadas", "Error!");
+    }
+}
+
+function showPosition(position) {
+    var coordenadas = position.coords.latitude + ',' + position.coords.longitude;
+    if(coordenadas == null)
+        coordenadas = "Error!";
+    //coordenadasg = coordenadas;
+    console.log("coordenadas: ");
+    console.log(coordenadas);
+    sessionStorage.setItem("coordenadas", coordenadas);
+}

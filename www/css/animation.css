@@ -27,12 +27,8 @@
 	background: url(../img/iconoPolicia.png) no-repeat;
 	position: absolute;
 	top: 20%;
-	display: none;
+	display: block;
 	cursor: pointer;
-	animation: animarPolicia 1s;
-	-moz-animation: animarPolicia 1s;
-	-o-animation: animarPolicia 1s;
-	-webkit-animation: animarPolicia 1s;
 }
 .ambulancia{
 	width: 48px;
@@ -42,7 +38,7 @@
     margin-bottom: 10px;
     left: 50%;
     transform: translate(-50%);
-	display: none;
+	display: block;
 	cursor: pointer;
 }
 .bomberos{
@@ -52,12 +48,8 @@
 	position: absolute;
 	top: 20%;
 	left: 77%;
-	display: none;
+	display: block;
 	cursor: pointer;
-	animation: animarBombero 1s;
-	-moz-animation: animarBombero 1s;
-	-o-animation: animarBombero 1s;
-	-webkit-animation: animarBombero 1s;
 }
 
 /*ocultar botones con animacion*/
@@ -69,10 +61,6 @@
 	left: 50%;
 	display: none;/
 	cursor: pointer;
-	animation: animarPoliciaR 1s;
-	-moz-animation: animarPoliciaR 1s;
-	-o-animation: animarPoliciarR 1s;
-	-webkit-animation: animarPoliciaR 1s;
 }
 .bomberosR{
 	width: 48px;
@@ -83,10 +71,6 @@
 	left: 49%;
 	/*display: none;*/
 	cursor: pointer;
-	animation: animarBomberoR 1s;
-	-moz-animation: animarBomberoR 1s;
-	-o-animation: animarBomberoR 1s;
-	-webkit-animation: animarBomberoR 1s;
 }
 
 /*---Animaciones---*/
