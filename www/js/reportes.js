@@ -28,11 +28,11 @@ function cargaReportes(){
 						if(data[i].rpcEstatus == 1000){
 							/*alert("Error: No tiene Reportes Activos");
 							window.location.href ="#home";*/
-                            mostrarMensaje("reportes", "home", "Error", "No tiene Reportes Activos", 1, 1);
+                            mostrarMensaje("reportes", "home", "Error", "No tiene reportes activos", 1, 1);
 						}else if(data[i].rpcEstatus == 1001){
 							/*alert("Error: Error Interno, favor de reportarlo con el administrador del sistema");
 							window.location.href ="#home";*/
-                            mostrarMensaje("reportes", "home", "Error", "Error Interno, favor de reportarlo con el administrador del sistema", 1, 1);
+                            mostrarMensaje("reportes", "home", "Error", "Error interno, favor de reportarlo con el administrador del sistema", 1, 1);
 						}else{
 							removeItemReg(0,1);
 							var flDatos = data;
@@ -46,7 +46,7 @@ function cargaReportes(){
             error: function (data, jqXHR, status) {
 
                 //alert("Error: No se obtuvo respuesta del servidor. Favor de intentar más tarde.");
-                mostrarMensaje("reportes", "home", "Error", "No se obtuvo respuesta del servidor. Favor de intentar m&aacute;s tarde.", 1, 1);
+                mostrarMensaje("reportes", "home", "Error", "No se obtuvo respuesta del servidor, favor de intentar m&aacute;s tarde.", 1, 1);
 
                 console.log("data: " + data);
                 //window.location.href ="#home";

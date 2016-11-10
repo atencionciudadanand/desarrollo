@@ -11,7 +11,7 @@ var app = {
  
     sendPhoto: function() {
 		//alert('Reporte Enviado... ');
-        mostrarMensaje("servicios", "", "&Eacute;xito", "Reporte Enviado...", 1, 0);
+        mostrarMensaje("servicios", "", "&Eacute;xito", "Reporte enviado...", 1, 0);
     },
  
     takePhoto: function(){

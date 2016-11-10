@@ -1,4 +1,4 @@
-var valueSelectService;
+ï»¿var valueSelectService;
 var alerId;
 var flIdServicio;
 
@@ -171,7 +171,7 @@ function sendReport(){
                     dataType: "json",
                     success: function (data, status, jqXHR) {
 
-                        //alert("Éxito: Su reporte se ha enviado correctamente con número de folio " + flFolio);
+                        //alert("ï¿½xito: Su reporte se ha enviado correctamente con nï¿½mero de folio " + flFolio);
                         mostrarMensaje("servicios", "home", "&Eacute;xito", "Su reporte se ha enviado correctamente con n&uacute;mero de folio " + flFolio, 1, 1);
 
                     alerId = data.alertId;

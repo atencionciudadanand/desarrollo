@@ -26,7 +26,7 @@ function validaLogin(){
 
 							//alert("Error: No se obtuvo respuesta del servidor. Favor de intentar más tarde");
 							//window.location.href ="#acceso";
-                            mostrarMensaje('login', 'acceso', 'Error', 'No se obtuvo respuesta del servidor. Favor de intentar m&aacute;s tarde', 1, 1);
+                            mostrarMensaje('login', 'acceso', 'Error', 'No se obtuvo respuesta del servidor, favor de intentar m&aacute;s tarde', 1, 1);
 
 						}else if(data.estatus == 1002){
                             //alert("Error: El Usuario no existe, favor de verificar datos");
@@ -45,7 +45,7 @@ function validaLogin(){
                 error: function (data, jqXHR, status) {
                     //alert("Error: No se obtuvo respuesta del servidor. Favor de intentar más tarde");
                     //window.location.href ="#acceso";
-                    mostrarMensaje('login', 'acceso', 'Error', 'No se obtuvo respuesta del servidor. Favor de intentar m&aacute;s tarde', 1, 1);
+                    mostrarMensaje('login', 'acceso', 'Error', 'No se obtuvo respuesta del servidor, favor de intentar m&aacute;s tarde', 1, 1);
 
                 },
                 done: function (e) {
@@ -143,7 +143,7 @@ function guardaReg(){
                 error: function (data, jqXHR, status) {
                     /*alert("Error: No se obtubo respuesta del servidor. Favor de intentar mas tarde");
                     window.location.href ="#acceso";*/
-                    mostrarMensaje("registro", "acceso", "Error", "No se obtubo respuesta del servidor. Favor de intentar mas tarde", 1, 1);
+                    mostrarMensaje("registro", "acceso", "Error", "No se obtubo respuesta del servidor, favor de intentar m&aacute;s tarde", 1, 1);
                 },
                 done: function (e) {
                     console.log("DONE");
@@ -338,7 +338,7 @@ function guardaPriv(){
         success: function (data, status, jqXHR) {
 
             //alert("&Eacute;xito: Registro Exitoso");
-            mostrarMensaje("privacidad", "login", "&Eacute;xito", "Registro Exitoso", 1, 0);
+            mostrarMensaje("privacidad", "login", "&Eacute;xito", "Registro exitoso", 1, 0);
             //window.location.href ="#login";
 
         },
